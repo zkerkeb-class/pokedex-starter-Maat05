@@ -1,610 +1,3096 @@
-import bulbasaur from "./pokemons/1.png";
-import bulbasaurShiny from "./pokemons/shiny/1.png";
-import ivysaur from "./pokemons/2.png";
-import ivysaurShiny from "./pokemons/shiny/2.png";
-import venusaur from "./pokemons/3.png";
-import venusaurShiny from "./pokemons/shiny/3.png";
-import charmander from "./pokemons/4.png";
-import charmanderShiny from "./pokemons/shiny/4.png";
-import charmeleon from "./pokemons/5.png";
-import charmeleonShiny from "./pokemons/shiny/5.png";
-import charizard from "./pokemons/6.png";
-import charizardShiny from "./pokemons/shiny/6.png";
-import squirtle from "./pokemons/7.png";
-import squirtleShiny from "./pokemons/shiny/7.png";
-import wartortle from "./pokemons/8.png";
-import wartortleShiny from "./pokemons/shiny/8.png";
-import blastoise from "./pokemons/9.png";
-import blastoiseShiny from "./pokemons/shiny/9.png";
-import caterpie from "./pokemons/10.png";
-import caterpieShiny from "./pokemons/shiny/10.png";
-import metapod from "./pokemons/11.png";
-import metapodShiny from "./pokemons/shiny/11.png";
-import butterfree from "./pokemons/12.png";
-import butterfreeShiny from "./pokemons/shiny/12.png";
-import weedle from "./pokemons/13.png";
-import weedleShiny from "./pokemons/shiny/13.png";
-import kakuna from "./pokemons/14.png";
-import kakunaShiny from "./pokemons/shiny/14.png";
-import beedrill from "./pokemons/15.png";
-import beedrillShiny from "./pokemons/shiny/15.png";
-import pidgey from "./pokemons/16.png";
-import pidgeyShiny from "./pokemons/shiny/16.png";
-import pidgeotto from "./pokemons/17.png";
-import pidgeottoShiny from "./pokemons/shiny/17.png";
-import pidgeot from "./pokemons/18.png";
-import pidgeotShiny from "./pokemons/shiny/18.png";
-import rattata from "./pokemons/19.png";
-import rattataShiny from "./pokemons/shiny/19.png";
-import raticate from "./pokemons/20.png";
-import raticateShiny from "./pokemons/shiny/20.png";
-import spearow from "./pokemons/21.png";
-import spearowShiny from "./pokemons/shiny/21.png";
-import fearow from "./pokemons/22.png";
-import fearowShiny from "./pokemons/shiny/22.png";
-import ekans from "./pokemons/23.png";
-import ekansShiny from "./pokemons/shiny/23.png";
-import arbok from "./pokemons/24.png";
-import arbokShiny from "./pokemons/shiny/24.png";
-import pikachu from "./pokemons/25.png";
-import pikachuShiny from "./pokemons/shiny/25.png";
-import raichu from "./pokemons/26.png";
-import raichuShiny from "./pokemons/shiny/26.png";
-import sandshrew from "./pokemons/27.png";
-import sandshrewShiny from "./pokemons/shiny/27.png";
-import sandslash from "./pokemons/28.png";
-import sandslashShiny from "./pokemons/shiny/28.png";
-import nidoranF from "./pokemons/29.png";
-import nidoranFShiny from "./pokemons/shiny/29.png";
-import nidorina from "./pokemons/30.png";
-import nidorinaShiny from "./pokemons/shiny/30.png";
-import nidoqueen from "./pokemons/31.png";
-import nidoqueenShiny from "./pokemons/shiny/31.png";
-import nidoranM from "./pokemons/32.png";
-import nidoranMShiny from "./pokemons/shiny/32.png";
-import nidorino from "./pokemons/33.png";
-import nidorinoShiny from "./pokemons/shiny/33.png";
-import nidoking from "./pokemons/34.png";
-import nidokingShiny from "./pokemons/shiny/34.png";
-import clefairy from "./pokemons/35.png";
-import clefairyShiny from "./pokemons/shiny/35.png";
-import clefable from "./pokemons/36.png";
-import clefableShiny from "./pokemons/shiny/36.png";
-import vulpix from "./pokemons/37.png";
-import vulpixShiny from "./pokemons/shiny/37.png";
-import ninetales from "./pokemons/38.png";
-import ninetalesShiny from "./pokemons/shiny/38.png";
-import jigglypuff from "./pokemons/39.png";
-import jigglypuffShiny from "./pokemons/shiny/39.png";
-import wigglytuff from "./pokemons/40.png";
-import wigglytuffShiny from "./pokemons/shiny/40.png";
-import zubat from "./pokemons/41.png";
-import zubatShiny from "./pokemons/shiny/41.png";
-import golbat from "./pokemons/42.png";
-import golbatShiny from "./pokemons/shiny/42.png";
-import oddish from "./pokemons/43.png";
-import oddishShiny from "./pokemons/shiny/43.png";
-import gloom from "./pokemons/44.png";
-import gloomShiny from "./pokemons/shiny/44.png";
-import vileplume from "./pokemons/45.png";
-import vileplumShiny from "./pokemons/shiny/45.png";
-import paras from "./pokemons/46.png";
-import parasShiny from "./pokemons/shiny/46.png";
-import parasect from "./pokemons/47.png";
-import parasectShiny from "./pokemons/shiny/47.png";
-import venonat from "./pokemons/48.png";
-import venonatShiny from "./pokemons/shiny/48.png";
-import venomoth from "./pokemons/49.png";
-import venomothShiny from "./pokemons/shiny/49.png";
-import diglett from "./pokemons/50.png";
-import diglettShiny from "./pokemons/shiny/50.png";
-import dugtrio from "./pokemons/51.png";
-import dugtrioShiny from "./pokemons/shiny/51.png";
-import meowth from "./pokemons/52.png";
-import meowthShiny from "./pokemons/shiny/52.png";
-import persian from "./pokemons/53.png";
-import persianShiny from "./pokemons/shiny/53.png";
-import psyduck from "./pokemons/54.png";
-import psyduckShiny from "./pokemons/shiny/54.png";
-import golduck from "./pokemons/55.png";
-import golduckShiny from "./pokemons/shiny/55.png";
-import mankey from "./pokemons/56.png";
-import mankeyShiny from "./pokemons/shiny/56.png";
-import primeape from "./pokemons/57.png";
-import primeapeShiny from "./pokemons/shiny/57.png";
-import growlithe from "./pokemons/58.png";
-import growlitheShiny from "./pokemons/shiny/58.png";
-import arcanine from "./pokemons/59.png";
-import arcanineShiny from "./pokemons/shiny/59.png";
-import poliwag from "./pokemons/60.png";
-import poliwagShiny from "./pokemons/shiny/60.png";
-import poliwhirl from "./pokemons/61.png";
-import poliwhirlShiny from "./pokemons/shiny/61.png";
-import poliwrath from "./pokemons/62.png";
-import poliwrathShiny from "./pokemons/shiny/62.png";
-import abra from "./pokemons/63.png";
-import abraShiny from "./pokemons/shiny/63.png";
-import kadabra from "./pokemons/64.png";
-import kadabraShiny from "./pokemons/shiny/64.png";
-import alakazam from "./pokemons/65.png";
-import alakazamShiny from "./pokemons/shiny/65.png";
-import machop from "./pokemons/66.png";
-import machopShiny from "./pokemons/shiny/66.png";
-import machoke from "./pokemons/67.png";
-import machokeShiny from "./pokemons/shiny/67.png";
-import machamp from "./pokemons/68.png";
-import machampShiny from "./pokemons/shiny/68.png";
-import bellsprout from "./pokemons/69.png";
-import bellsproutShiny from "./pokemons/shiny/69.png";
-import weepinbell from "./pokemons/70.png";
-import weepinbellShiny from "./pokemons/shiny/70.png";
-import victreebel from "./pokemons/71.png";
-import victreebelShiny from "./pokemons/shiny/71.png";
-import tentacool from "./pokemons/72.png";
-import tentacoolShiny from "./pokemons/shiny/72.png";
-import tentacruel from "./pokemons/73.png";
-import tentacruelShiny from "./pokemons/shiny/73.png";
-import geodude from "./pokemons/74.png";
-import geodudeShiny from "./pokemons/shiny/74.png";
-import graveler from "./pokemons/75.png";
-import gravelerShiny from "./pokemons/shiny/75.png";
-import golem from "./pokemons/76.png";
-import golemShiny from "./pokemons/shiny/76.png";
-import ponyta from "./pokemons/77.png";
-import ponytaShiny from "./pokemons/shiny/77.png";
-import rapidash from "./pokemons/78.png";
-import rapidashShiny from "./pokemons/shiny/78.png";
-import slowpoke from "./pokemons/79.png";
-import slowpokeShiny from "./pokemons/shiny/79.png";
-import slowbro from "./pokemons/80.png";
-import slowbroShiny from "./pokemons/shiny/80.png";
-import magnemite from "./pokemons/81.png";
-import magnemiteShiny from "./pokemons/shiny/81.png";
-import magneton from "./pokemons/82.png";
-import magnetonShiny from "./pokemons/shiny/82.png";
-import farfetchd from "./pokemons/83.png";
-import farfetchdShiny from "./pokemons/shiny/83.png";
-import doduo from "./pokemons/84.png";
-import doduoShiny from "./pokemons/shiny/84.png";
-import dodrio from "./pokemons/85.png";
-import dodrioShiny from "./pokemons/shiny/85.png";
-import seel from "./pokemons/86.png";
-import seelShiny from "./pokemons/shiny/86.png";
-import dewgong from "./pokemons/87.png";
-import dewgongShiny from "./pokemons/shiny/87.png";
-import grimer from "./pokemons/88.png";
-import grimerShiny from "./pokemons/shiny/88.png";
-import muk from "./pokemons/89.png";
-import mukShiny from "./pokemons/shiny/89.png";
-import shellder from "./pokemons/90.png";
-import shellderShiny from "./pokemons/shiny/90.png";
-import cloyster from "./pokemons/91.png";
-import cloysterShiny from "./pokemons/shiny/91.png";
-import gastly from "./pokemons/92.png";
-import gastlyShiny from "./pokemons/shiny/92.png";
-import haunter from "./pokemons/93.png";
-import haunterShiny from "./pokemons/shiny/93.png";
-import gengar from "./pokemons/94.png";
-import gengarShiny from "./pokemons/shiny/94.png";
-import onix from "./pokemons/95.png";
-import onixShiny from "./pokemons/shiny/95.png";
-import drowzee from "./pokemons/96.png";
-import drowzeeShiny from "./pokemons/shiny/96.png";
-import hypno from "./pokemons/97.png";
-import hypnoShiny from "./pokemons/shiny/97.png";
-import krabby from "./pokemons/98.png";
-import krabbyShiny from "./pokemons/shiny/98.png";
-import kingler from "./pokemons/99.png";
-import kinglerShiny from "./pokemons/shiny/99.png";
-import voltorb from "./pokemons/100.png";
-import voltorbShiny from "./pokemons/shiny/100.png";
-import electrode from "./pokemons/101.png";
-import electrodeShiny from "./pokemons/shiny/101.png";
-import exeggcute from "./pokemons/102.png";
-import exeggcuteShiny from "./pokemons/shiny/102.png";
-import exeggutor from "./pokemons/103.png";
-import exeggutorShiny from "./pokemons/shiny/103.png";
-import cubone from "./pokemons/104.png";
-import cuboneShiny from "./pokemons/shiny/104.png";
-import marowak from "./pokemons/105.png";
-import marowakShiny from "./pokemons/shiny/105.png";
-import hitmonlee from "./pokemons/106.png";
-import hitmonleeShiny from "./pokemons/shiny/106.png";
-import hitmonchan from "./pokemons/107.png";
-import hitmonchanShiny from "./pokemons/shiny/107.png";
-import lickitung from "./pokemons/108.png";
-import lickitungShiny from "./pokemons/shiny/108.png";
-import koffing from "./pokemons/109.png";
-import koffingShiny from "./pokemons/shiny/109.png";
-import weezing from "./pokemons/110.png";
-import weezingShiny from "./pokemons/shiny/110.png";
-import rhyhorn from "./pokemons/111.png";
-import rhyhornShiny from "./pokemons/shiny/111.png";
-import rhydon from "./pokemons/112.png";
-import rhydonShiny from "./pokemons/shiny/112.png";
-import chansey from "./pokemons/113.png";
-import chanseyShiny from "./pokemons/shiny/113.png";
-import tangela from "./pokemons/114.png";
-import tangelaShiny from "./pokemons/shiny/114.png";
-import kangaskhan from "./pokemons/115.png";
-import kangaskhanShiny from "./pokemons/shiny/115.png";
-import horsea from "./pokemons/116.png";
-import horseaShiny from "./pokemons/shiny/116.png";
-import seadra from "./pokemons/117.png";
-import seadraShiny from "./pokemons/shiny/117.png";
-import goldeen from "./pokemons/118.png";
-import goldeenShiny from "./pokemons/shiny/118.png";
-import seaking from "./pokemons/119.png";
-import seakingShiny from "./pokemons/shiny/119.png";
-import staryu from "./pokemons/120.png";
-import staryuShiny from "./pokemons/shiny/120.png";
-import starmie from "./pokemons/121.png";
-import starmieShiny from "./pokemons/shiny/121.png";
-import mrMime from "./pokemons/122.png";
-import mrMimeShiny from "./pokemons/shiny/122.png";
-import scyther from "./pokemons/123.png";
-import scytherShiny from "./pokemons/shiny/123.png";
-import jynx from "./pokemons/124.png";
-import jynxShiny from "./pokemons/shiny/124.png";
-import electabuzz from "./pokemons/125.png";
-import electabuzzShiny from "./pokemons/shiny/125.png";
-import magmar from "./pokemons/126.png";
-import magmarShiny from "./pokemons/shiny/126.png";
-import pinsir from "./pokemons/127.png";
-import pinsirShiny from "./pokemons/shiny/127.png";
-import tauros from "./pokemons/128.png";
-import taurosShiny from "./pokemons/shiny/128.png";
-import magikarp from "./pokemons/129.png";
-import magikarpShiny from "./pokemons/shiny/129.png";
-import gyarados from "./pokemons/130.png";
-import gyaradosShiny from "./pokemons/shiny/130.png";
-import lapras from "./pokemons/131.png";
-import laprasShiny from "./pokemons/shiny/131.png";
-import ditto from "./pokemons/132.png";
-import dittoShiny from "./pokemons/shiny/132.png";
-import eevee from "./pokemons/133.png";
-import eeveeShiny from "./pokemons/shiny/133.png";
-import vaporeon from "./pokemons/134.png";
-import vaporeonShiny from "./pokemons/shiny/134.png";
-import jolteon from "./pokemons/135.png";
-import jolteonShiny from "./pokemons/shiny/135.png";
-import flareon from "./pokemons/136.png";
-import flareonShiny from "./pokemons/shiny/136.png";
-import porygon from "./pokemons/137.png";
-import porygonShiny from "./pokemons/shiny/137.png";
-import omanyte from "./pokemons/138.png";
-import omanyteShiny from "./pokemons/shiny/138.png";
-import omastar from "./pokemons/139.png";
-import omastarShiny from "./pokemons/shiny/139.png";
-import kabuto from "./pokemons/140.png";
-import kabutoShiny from "./pokemons/shiny/140.png";
-import kabutops from "./pokemons/141.png";
-import kabutopsShiny from "./pokemons/shiny/141.png";
-import aerodactyl from "./pokemons/142.png";
-import aerodactylShiny from "./pokemons/shiny/142.png";
-import snorlax from "./pokemons/143.png";
-import snorlaxShiny from "./pokemons/shiny/143.png";
-import articuno from "./pokemons/144.png";
-import articunoShiny from "./pokemons/shiny/144.png";
-import zapdos from "./pokemons/145.png";
-import zapdosShiny from "./pokemons/shiny/145.png";
-import moltres from "./pokemons/146.png";
-import moltresShiny from "./pokemons/shiny/146.png";
-import dratini from "./pokemons/147.png";
-import dratiniShiny from "./pokemons/shiny/147.png";
-import dragonair from "./pokemons/148.png";
-import dragonairShiny from "./pokemons/shiny/148.png";
-import dragonite from "./pokemons/149.png";
-import dragoniteShiny from "./pokemons/shiny/149.png";
-import mewtwo from "./pokemons/150.png";
-import mewtwoShiny from "./pokemons/shiny/150.png";
-import mew from "./pokemons/151.png";
-import mewShiny from "./pokemons/shiny/151.png";
+import {pokemonImages, pokemonShinyImages} from './imageLibrary';
 
-export const pokemonImages = {
-  1: bulbasaur,
-  2: ivysaur,
-  3: venusaur,
-  4: charmander,
-  5: charmeleon,
-  6: charizard,
-  7: squirtle,
-  8: wartortle,
-  9: blastoise,
-  10: caterpie,
-  11: metapod,
-  12: butterfree,
-  13: weedle,
-  14: kakuna,
-  15: beedrill,
-  16: pidgey,
-  17: pidgeotto,
-  18: pidgeot,
-  19: rattata,
-  20: raticate,
-  21: spearow,
-  22: fearow,
-  23: ekans,
-  24: arbok,
-  25: pikachu,
-  26: raichu,
-  27: sandshrew,
-  28: sandslash,
-  29: nidoranF,
-  30: nidorina,
-  31: nidoqueen,
-  32: nidoranM,
-  33: nidorino,
-  34: nidoking,
-  35: clefairy,
-  36: clefable,
-  37: vulpix,
-  38: ninetales,
-  39: jigglypuff,
-  40: wigglytuff,
-  41: zubat,
-  42: golbat,
-  43: oddish,
-  44: gloom,
-  45: vileplume,
-  46: paras,
-  47: parasect,
-  48: venonat,
-  49: venomoth,
-  50: diglett,
-  51: dugtrio,
-  52: meowth,
-  53: persian,
-  54: psyduck,
-  55: golduck,
-  56: mankey,
-  57: primeape,
-  58: growlithe,
-  59: arcanine,
-  60: poliwag,
-  61: poliwhirl,
-  62: poliwrath,
-  63: abra,
-  64: kadabra,
-  65: alakazam,
-  66: machop,
-  67: machoke,
-  68: machamp,
-  69: bellsprout,
-  70: weepinbell,
-  71: victreebel,
-  72: tentacool,
-  73: tentacruel,
-  74: geodude,
-  75: graveler,
-  76: golem,
-  77: ponyta,
-  78: rapidash,
-  79: slowpoke,
-  80: slowbro,
-  81: magnemite,
-  82: magneton,
-  83: farfetchd,
-  84: doduo,
-  85: dodrio,
-  86: seel,
-  87: dewgong,
-  88: grimer,
-  89: muk,
-  90: shellder,
-  91: cloyster,
-  92: gastly,
-  93: haunter,
-  94: gengar,
-  95: onix,
-  96: drowzee,
-  97: hypno,
-  98: krabby,
-  99: kingler,
-  100: voltorb,
-  101: electrode,
-  102: exeggcute,
-  103: exeggutor,
-  104: cubone,
-  105: marowak,
-  106: hitmonlee,
-  107: hitmonchan,
-  108: lickitung,
-  109: koffing,
-  110: weezing,
-  111: rhyhorn,
-  112: rhydon,
-  113: chansey,
-  114: tangela,
-  115: kangaskhan,
-  116: horsea,
-  117: seadra,
-  118: goldeen,
-  119: seaking,
-  120: staryu,
-  121: starmie,
-  122: mrMime,
-  123: scyther,
-  124: jynx,
-  125: electabuzz,
-  126: magmar,
-  127: pinsir,
-  128: tauros,
-  129: magikarp,
-  130: gyarados,
-  131: lapras,
-  132: ditto,
-  133: eevee,
-  134: vaporeon,
-  135: jolteon,
-  136: flareon,
-  137: porygon,
-  138: omanyte,
-  139: omastar,
-  140: kabuto,
-  141: kabutops,
-  142: aerodactyl,
-  143: snorlax,
-  144: articuno,
-  145: zapdos,
-  146: moltres,
-  147: dratini,
-  148: dragonair,
-  149: dragonite,
-  150: mewtwo,
-  151: mew
-}
+const pokemonsList = [{
+    "id": 1,
+    "name": {
+      "english": "Bulbasaur",
+      "japanese": "フシギダネ",
+      "chinese": "妙蛙种子",
+      "french": "Bulbizarre"
+    },
+    "type": [
+      "Grass",
+      "Poison"
+    ],
+    "base": {
+      "HP": 45,
+      "Attack": 49,
+      "Defense": 49,
+      "Sp. Attack": 65,
+      "Sp. Defense": 65,
+      "Speed": 45
+    }
+  },
+  {
+    "id": 2,
+    "name": {
+      "english": "Ivysaur",
+      "japanese": "フシギソウ",
+      "chinese": "妙蛙草",
+      "french": "Herbizarre"
+    },
+    "type": [
+      "Grass",
+      "Poison"
+    ],
+    "base": {
+      "HP": 60,
+      "Attack": 62,
+      "Defense": 63,
+      "Sp. Attack": 80,
+      "Sp. Defense": 80,
+      "Speed": 60
+    }
+  },
+  {
+    "id": 3,
+    "name": {
+      "english": "Venusaur",
+      "japanese": "フシギバナ",
+      "chinese": "妙蛙花",
+      "french": "Florizarre"
+    },
+    "type": [
+      "Grass",
+      "Poison"
+    ],
+    "base": {
+      "HP": 80,
+      "Attack": 82,
+      "Defense": 83,
+      "Sp. Attack": 100,
+      "Sp. Defense": 100,
+      "Speed": 80
+    }
+  },
+  {
+    "id": 4,
+    "name": {
+      "english": "Charmander",
+      "japanese": "ヒトカゲ",
+      "chinese": "小火龙",
+      "french": "Salamèche"
+    },
+    "type": [
+      "Fire"
+    ],
+    "base": {
+      "HP": 39,
+      "Attack": 52,
+      "Defense": 43,
+      "Sp. Attack": 60,
+      "Sp. Defense": 50,
+      "Speed": 65
+    }
+  },
+  {
+    "id": 5,
+    "name": {
+      "english": "Charmeleon",
+      "japanese": "リザード",
+      "chinese": "火恐龙",
+      "french": "Reptincel"
+    },
+    "type": [
+      "Fire"
+    ],
+    "base": {
+      "HP": 58,
+      "Attack": 64,
+      "Defense": 58,
+      "Sp. Attack": 80,
+      "Sp. Defense": 65,
+      "Speed": 80
+    }
+  },
+  {
+    "id": 6,
+    "name": {
+      "english": "Charizard",
+      "japanese": "リザードン",
+      "chinese": "喷火龙",
+      "french": "Dracaufeu"
+    },
+    "type": [
+      "Fire",
+      "Flying"
+    ],
+    "base": {
+      "HP": 78,
+      "Attack": 84,
+      "Defense": 78,
+      "Sp. Attack": 109,
+      "Sp. Defense": 85,
+      "Speed": 100
+    }
+  },
+  {
+    "id": 7,
+    "name": {
+      "english": "Squirtle",
+      "japanese": "ゼニガメ",
+      "chinese": "杰尼龟",
+      "french": "Carapuce"
+    },
+    "type": [
+      "Water"
+    ],
+    "base": {
+      "HP": 44,
+      "Attack": 48,
+      "Defense": 65,
+      "Sp. Attack": 50,
+      "Sp. Defense": 64,
+      "Speed": 43
+    }
+  },
+  {
+    "id": 8,
+    "name": {
+      "english": "Wartortle",
+      "japanese": "カメール",
+      "chinese": "卡咪龟",
+      "french": "Carabaffe"
+    },
+    "type": [
+      "Water"
+    ],
+    "base": {
+      "HP": 59,
+      "Attack": 63,
+      "Defense": 80,
+      "Sp. Attack": 65,
+      "Sp. Defense": 80,
+      "Speed": 58
+    }
+  },
+  {
+    "id": 9,
+    "name": {
+      "english": "Blastoise",
+      "japanese": "カメックス",
+      "chinese": "水箭龟",
+      "french": "Tortank"
+    },
+    "type": [
+      "Water"
+    ],
+    "base": {
+      "HP": 79,
+      "Attack": 83,
+      "Defense": 100,
+      "Sp. Attack": 85,
+      "Sp. Defense": 105,
+      "Speed": 78
+    }
+  },
+  {
+    "id": 10,
+    "name": {
+      "english": "Caterpie",
+      "japanese": "キャタピー",
+      "chinese": "绿毛虫",
+      "french": "Chenipan"
+    },
+    "type": [
+      "Bug"
+    ],
+    "base": {
+      "HP": 45,
+      "Attack": 30,
+      "Defense": 35,
+      "Sp. Attack": 20,
+      "Sp. Defense": 20,
+      "Speed": 45
+    }
+  },
+  {
+    "id": 11,
+    "name": {
+      "english": "Metapod",
+      "japanese": "トランセル",
+      "chinese": "铁甲蛹",
+      "french": "Chrysacier"
+    },
+    "type": [
+      "Bug"
+    ],
+    "base": {
+      "HP": 50,
+      "Attack": 20,
+      "Defense": 55,
+      "Sp. Attack": 25,
+      "Sp. Defense": 25,
+      "Speed": 30
+    }
+  },
+  {
+    "id": 12,
+    "name": {
+      "english": "Butterfree",
+      "japanese": "バタフリー",
+      "chinese": "巴大蝶",
+      "french": "Papilusion"
+    },
+    "type": [
+      "Bug",
+      "Flying"
+    ],
+    "base": {
+      "HP": 60,
+      "Attack": 45,
+      "Defense": 50,
+      "Sp. Attack": 90,
+      "Sp. Defense": 80,
+      "Speed": 70
+    }
+  },
+  {
+    "id": 13,
+    "name": {
+      "english": "Weedle",
+      "japanese": "ビードル",
+      "chinese": "独角虫",
+      "french": "Aspicot"
+    },
+    "type": [
+      "Bug",
+      "Poison"
+    ],
+    "base": {
+      "HP": 40,
+      "Attack": 35,
+      "Defense": 30,
+      "Sp. Attack": 20,
+      "Sp. Defense": 20,
+      "Speed": 50
+    }
+  },
+  {
+    "id": 14,
+    "name": {
+      "english": "Kakuna",
+      "japanese": "コクーン",
+      "chinese": "铁壳蛹",
+      "french": "Coconfort"
+    },
+    "type": [
+      "Bug",
+      "Poison"
+    ],
+    "base": {
+      "HP": 45,
+      "Attack": 25,
+      "Defense": 50,
+      "Sp. Attack": 25,
+      "Sp. Defense": 25,
+      "Speed": 35
+    }
+  },
+  {
+    "id": 15,
+    "name": {
+      "english": "Beedrill",
+      "japanese": "スピアー",
+      "chinese": "大针蜂",
+      "french": "Dardargnan"
+    },
+    "type": [
+      "Bug",
+      "Poison"
+    ],
+    "base": {
+      "HP": 65,
+      "Attack": 90,
+      "Defense": 40,
+      "Sp. Attack": 45,
+      "Sp. Defense": 80,
+      "Speed": 75
+    }
+  },
+  {
+    "id": 16,
+    "name": {
+      "english": "Pidgey",
+      "japanese": "ポッポ",
+      "chinese": "波波",
+      "french": "Roucool"
+    },
+    "type": [
+      "Normal",
+      "Flying"
+    ],
+    "base": {
+      "HP": 40,
+      "Attack": 45,
+      "Defense": 40,
+      "Sp. Attack": 35,
+      "Sp. Defense": 35,
+      "Speed": 56
+    }
+  },
+  {
+    "id": 17,
+    "name": {
+      "english": "Pidgeotto",
+      "japanese": "ピジョン",
+      "chinese": "比比鸟",
+      "french": "Roucoups"
+    },
+    "type": [
+      "Normal",
+      "Flying"
+    ],
+    "base": {
+      "HP": 63,
+      "Attack": 60,
+      "Defense": 55,
+      "Sp. Attack": 50,
+      "Sp. Defense": 50,
+      "Speed": 71
+    }
+  },
+  {
+    "id": 18,
+    "name": {
+      "english": "Pidgeot",
+      "japanese": "ピジョット",
+      "chinese": "大比鸟",
+      "french": "Roucarnage"
+    },
+    "type": [
+      "Normal",
+      "Flying"
+    ],
+    "base": {
+      "HP": 83,
+      "Attack": 80,
+      "Defense": 75,
+      "Sp. Attack": 70,
+      "Sp. Defense": 70,
+      "Speed": 101
+    }
+  },
+  {
+    "id": 19,
+    "name": {
+      "english": "Rattata",
+      "japanese": "コラッタ",
+      "chinese": "小拉达",
+      "french": "Rattata"
+    },
+    "type": [
+      "Normal"
+    ],
+    "base": {
+      "HP": 30,
+      "Attack": 56,
+      "Defense": 35,
+      "Sp. Attack": 25,
+      "Sp. Defense": 35,
+      "Speed": 72
+    }
+  },
+  {
+    "id": 20,
+    "name": {
+      "english": "Raticate",
+      "japanese": "ラッタ",
+      "chinese": "拉达",
+      "french": "Rattatac"
+    },
+    "type": [
+      "Normal"
+    ],
+    "base": {
+      "HP": 55,
+      "Attack": 81,
+      "Defense": 60,
+      "Sp. Attack": 50,
+      "Sp. Defense": 70,
+      "Speed": 97
+    }
+  },
+  {
+    "id": 21,
+    "name": {
+      "english": "Spearow",
+      "japanese": "オニスズメ",
+      "chinese": "烈雀",
+      "french": "Piafabec"
+    },
+    "type": [
+      "Normal",
+      "Flying"
+    ],
+    "base": {
+      "HP": 40,
+      "Attack": 60,
+      "Defense": 30,
+      "Sp. Attack": 31,
+      "Sp. Defense": 31,
+      "Speed": 70
+    }
+  },
+  {
+    "id": 22,
+    "name": {
+      "english": "Fearow",
+      "japanese": "オニドリル",
+      "chinese": "大嘴雀",
+      "french": "Rapasdepic"
+    },
+    "type": [
+      "Normal",
+      "Flying"
+    ],
+    "base": {
+      "HP": 65,
+      "Attack": 90,
+      "Defense": 65,
+      "Sp. Attack": 61,
+      "Sp. Defense": 61,
+      "Speed": 100
+    }
+  },
+  {
+    "id": 23,
+    "name": {
+      "english": "Ekans",
+      "japanese": "アーボ",
+      "chinese": "阿柏蛇",
+      "french": "Abo"
+    },
+    "type": [
+      "Poison"
+    ],
+    "base": {
+      "HP": 35,
+      "Attack": 60,
+      "Defense": 44,
+      "Sp. Attack": 40,
+      "Sp. Defense": 54,
+      "Speed": 55
+    }
+  },
+  {
+    "id": 24,
+    "name": {
+      "english": "Arbok",
+      "japanese": "アーボック",
+      "chinese": "阿柏怪",
+      "french": "Arbok"
+    },
+    "type": [
+      "Poison"
+    ],
+    "base": {
+      "HP": 60,
+      "Attack": 95,
+      "Defense": 69,
+      "Sp. Attack": 65,
+      "Sp. Defense": 79,
+      "Speed": 80
+    }
+  },
+  {
+    "id": 25,
+    "name": {
+      "english": "Pikachu",
+      "japanese": "ピカチュウ",
+      "chinese": "皮卡丘",
+      "french": "Pikachu"
+    },
+    "type": [
+      "Electric"
+    ],
+    "base": {
+      "HP": 35,
+      "Attack": 55,
+      "Defense": 40,
+      "Sp. Attack": 50,
+      "Sp. Defense": 50,
+      "Speed": 90
+    }
+  },
+  {
+    "id": 26,
+    "name": {
+      "english": "Raichu",
+      "japanese": "ライチュウ",
+      "chinese": "雷丘",
+      "french": "Raichu"
+    },
+    "type": [
+      "Electric"
+    ],
+    "base": {
+      "HP": 60,
+      "Attack": 90,
+      "Defense": 55,
+      "Sp. Attack": 90,
+      "Sp. Defense": 80,
+      "Speed": 110
+    }
+  },
+  {
+    "id": 27,
+    "name": {
+      "english": "Sandshrew",
+      "japanese": "サンド",
+      "chinese": "穿山鼠",
+      "french": "Sabelette"
+    },
+    "type": [
+      "Ground"
+    ],
+    "base": {
+      "HP": 50,
+      "Attack": 75,
+      "Defense": 85,
+      "Sp. Attack": 20,
+      "Sp. Defense": 30,
+      "Speed": 40
+    }
+  },
+  {
+    "id": 28,
+    "name": {
+      "english": "Sandslash",
+      "japanese": "サンドパン",
+      "chinese": "穿山王",
+      "french": "Sablaireau"
+    },
+    "type": [
+      "Ground"
+    ],
+    "base": {
+      "HP": 75,
+      "Attack": 100,
+      "Defense": 110,
+      "Sp. Attack": 45,
+      "Sp. Defense": 55,
+      "Speed": 65
+    }
+  },
+  {
+    "id": 29,
+    "name": {
+      "english": "Nidoran♀",
+      "japanese": "ニドラン♀",
+      "chinese": "尼多兰",
+      "french": "Nidoran♀"
+    },
+    "type": [
+      "Poison"
+    ],
+    "base": {
+      "HP": 55,
+      "Attack": 47,
+      "Defense": 52,
+      "Sp. Attack": 40,
+      "Sp. Defense": 40,
+      "Speed": 41
+    }
+  },
+  {
+    "id": 30,
+    "name": {
+      "english": "Nidorina",
+      "japanese": "ニドリーナ",
+      "chinese": "尼多娜",
+      "french": "Nidorina"
+    },
+    "type": [
+      "Poison"
+    ],
+    "base": {
+      "HP": 70,
+      "Attack": 62,
+      "Defense": 67,
+      "Sp. Attack": 55,
+      "Sp. Defense": 55,
+      "Speed": 56
+    }
+  },
+  {
+    "id": 31,
+    "name": {
+      "english": "Nidoqueen",
+      "japanese": "ニドクイン",
+      "chinese": "尼多后",
+      "french": "Nidoqueen"
+    },
+    "type": [
+      "Poison",
+      "Ground"
+    ],
+    "base": {
+      "HP": 90,
+      "Attack": 92,
+      "Defense": 87,
+      "Sp. Attack": 75,
+      "Sp. Defense": 85,
+      "Speed": 76
+    }
+  },
+  {
+    "id": 32,
+    "name": {
+      "english": "Nidoran♂",
+      "japanese": "ニドラン♂",
+      "chinese": "尼多朗",
+      "french": "Nidoran♂"
+    },
+    "type": [
+      "Poison"
+    ],
+    "base": {
+      "HP": 46,
+      "Attack": 57,
+      "Defense": 40,
+      "Sp. Attack": 40,
+      "Sp. Defense": 40,
+      "Speed": 50
+    }
+  },
+  {
+    "id": 33,
+    "name": {
+      "english": "Nidorino",
+      "japanese": "ニドリーノ",
+      "chinese": "尼多力诺",
+      "french": "Nidorino"
+    },
+    "type": [
+      "Poison"
+    ],
+    "base": {
+      "HP": 61,
+      "Attack": 72,
+      "Defense": 57,
+      "Sp. Attack": 55,
+      "Sp. Defense": 55,
+      "Speed": 65
+    }
+  },
+  {
+    "id": 34,
+    "name": {
+      "english": "Nidoking",
+      "japanese": "ニドキング",
+      "chinese": "尼多王",
+      "french": "Nidoking"
+    },
+    "type": [
+      "Poison",
+      "Ground"
+    ],
+    "base": {
+      "HP": 81,
+      "Attack": 102,
+      "Defense": 77,
+      "Sp. Attack": 85,
+      "Sp. Defense": 75,
+      "Speed": 85
+    }
+  },
+  {
+    "id": 35,
+    "name": {
+      "english": "Clefairy",
+      "japanese": "ピッピ",
+      "chinese": "皮皮",
+      "french": "Mélofée"
+    },
+    "type": [
+      "Fairy"
+    ],
+    "base": {
+      "HP": 70,
+      "Attack": 45,
+      "Defense": 48,
+      "Sp. Attack": 60,
+      "Sp. Defense": 65,
+      "Speed": 35
+    }
+  },
+  {
+    "id": 36,
+    "name": {
+      "english": "Clefable",
+      "japanese": "ピクシー",
+      "chinese": "皮可西",
+      "french": "Mélodelfe"
+    },
+    "type": [
+      "Fairy"
+    ],
+    "base": {
+      "HP": 95,
+      "Attack": 70,
+      "Defense": 73,
+      "Sp. Attack": 95,
+      "Sp. Defense": 90,
+      "Speed": 60
+    }
+  },
+  {
+    "id": 37,
+    "name": {
+      "english": "Vulpix",
+      "japanese": "ロコン",
+      "chinese": "六尾",
+      "french": "Goupix"
+    },
+    "type": [
+      "Fire"
+    ],
+    "base": {
+      "HP": 38,
+      "Attack": 41,
+      "Defense": 40,
+      "Sp. Attack": 50,
+      "Sp. Defense": 65,
+      "Speed": 65
+    }
+  },
+  {
+    "id": 38,
+    "name": {
+      "english": "Ninetales",
+      "japanese": "キュウコン",
+      "chinese": "九尾",
+      "french": "Feunard"
+    },
+    "type": [
+      "Fire"
+    ],
+    "base": {
+      "HP": 73,
+      "Attack": 76,
+      "Defense": 75,
+      "Sp. Attack": 81,
+      "Sp. Defense": 100,
+      "Speed": 100
+    }
+  },
+  {
+    "id": 39,
+    "name": {
+      "english": "Jigglypuff",
+      "japanese": "プリン",
+      "chinese": "胖丁",
+      "french": "Rondoudou"
+    },
+    "type": [
+      "Normal",
+      "Fairy"
+    ],
+    "base": {
+      "HP": 115,
+      "Attack": 45,
+      "Defense": 20,
+      "Sp. Attack": 45,
+      "Sp. Defense": 25,
+      "Speed": 20
+    }
+  },
+  {
+    "id": 40,
+    "name": {
+      "english": "Wigglytuff",
+      "japanese": "プクリン",
+      "chinese": "胖可丁",
+      "french": "Grodoudou"
+    },
+    "type": [
+      "Normal",
+      "Fairy"
+    ],
+    "base": {
+      "HP": 140,
+      "Attack": 70,
+      "Defense": 45,
+      "Sp. Attack": 85,
+      "Sp. Defense": 50,
+      "Speed": 45
+    }
+  },
+  {
+    "id": 41,
+    "name": {
+      "english": "Zubat",
+      "japanese": "ズバット",
+      "chinese": "超音蝠",
+      "french": "Nosferapti"
+    },
+    "type": [
+      "Poison",
+      "Flying"
+    ],
+    "base": {
+      "HP": 40,
+      "Attack": 45,
+      "Defense": 35,
+      "Sp. Attack": 30,
+      "Sp. Defense": 40,
+      "Speed": 55
+    }
+  },
+  {
+    "id": 42,
+    "name": {
+      "english": "Golbat",
+      "japanese": "ゴルバット",
+      "chinese": "大嘴蝠",
+      "french": "Nosferalto"
+    },
+    "type": [
+      "Poison",
+      "Flying"
+    ],
+    "base": {
+      "HP": 75,
+      "Attack": 80,
+      "Defense": 70,
+      "Sp. Attack": 65,
+      "Sp. Defense": 75,
+      "Speed": 90
+    }
+  },
+  {
+    "id": 43,
+    "name": {
+      "english": "Oddish",
+      "japanese": "ナゾノクサ",
+      "chinese": "走路草",
+      "french": "Mystherbe"
+    },
+    "type": [
+      "Grass",
+      "Poison"
+    ],
+    "base": {
+      "HP": 45,
+      "Attack": 50,
+      "Defense": 55,
+      "Sp. Attack": 75,
+      "Sp. Defense": 65,
+      "Speed": 30
+    }
+  },
+  {
+    "id": 44,
+    "name": {
+      "english": "Gloom",
+      "japanese": "クサイハナ",
+      "chinese": "臭臭花",
+      "french": "Ortide"
+    },
+    "type": [
+      "Grass",
+      "Poison"
+    ],
+    "base": {
+      "HP": 60,
+      "Attack": 65,
+      "Defense": 70,
+      "Sp. Attack": 85,
+      "Sp. Defense": 75,
+      "Speed": 40
+    }
+  },
+  {
+    "id": 45,
+    "name": {
+      "english": "Vileplume",
+      "japanese": "ラフレシア",
+      "chinese": "霸王花",
+      "french": "Rafflesia"
+    },
+    "type": [
+      "Grass",
+      "Poison"
+    ],
+    "base": {
+      "HP": 75,
+      "Attack": 80,
+      "Defense": 85,
+      "Sp. Attack": 110,
+      "Sp. Defense": 90,
+      "Speed": 50
+    }
+  },
+  {
+    "id": 46,
+    "name": {
+      "english": "Paras",
+      "japanese": "パラス",
+      "chinese": "派拉斯",
+      "french": "Paras"
+    },
+    "type": [
+      "Bug",
+      "Grass"
+    ],
+    "base": {
+      "HP": 35,
+      "Attack": 70,
+      "Defense": 55,
+      "Sp. Attack": 45,
+      "Sp. Defense": 55,
+      "Speed": 25
+    }
+  },
+  {
+    "id": 47,
+    "name": {
+      "english": "Parasect",
+      "japanese": "パラセクト",
+      "chinese": "派拉斯特",
+      "french": "Parasect"
+    },
+    "type": [
+      "Bug",
+      "Grass"
+    ],
+    "base": {
+      "HP": 60,
+      "Attack": 95,
+      "Defense": 80,
+      "Sp. Attack": 60,
+      "Sp. Defense": 80,
+      "Speed": 30
+    }
+  },
+  {
+    "id": 48,
+    "name": {
+      "english": "Venonat",
+      "japanese": "コンパン",
+      "chinese": "毛球",
+      "french": "Mimitoss"
+    },
+    "type": [
+      "Bug",
+      "Poison"
+    ],
+    "base": {
+      "HP": 60,
+      "Attack": 55,
+      "Defense": 50,
+      "Sp. Attack": 40,
+      "Sp. Defense": 55,
+      "Speed": 45
+    }
+  },
+  {
+    "id": 49,
+    "name": {
+      "english": "Venomoth",
+      "japanese": "モルフォン",
+      "chinese": "摩鲁蛾",
+      "french": "Aéromite"
+    },
+    "type": [
+      "Bug",
+      "Poison"
+    ],
+    "base": {
+      "HP": 70,
+      "Attack": 65,
+      "Defense": 60,
+      "Sp. Attack": 90,
+      "Sp. Defense": 75,
+      "Speed": 90
+    }
+  },
+  {
+    "id": 50,
+    "name": {
+      "english": "Diglett",
+      "japanese": "ディグダ",
+      "chinese": "地鼠",
+      "french": "Taupiqueur"
+    },
+    "type": [
+      "Ground"
+    ],
+    "base": {
+      "HP": 10,
+      "Attack": 55,
+      "Defense": 25,
+      "Sp. Attack": 35,
+      "Sp. Defense": 45,
+      "Speed": 95
+    }
+  },
+  {
+    "id": 51,
+    "name": {
+      "english": "Dugtrio",
+      "japanese": "ダグトリオ",
+      "chinese": "三地鼠",
+      "french": "Triopikeur"
+    },
+    "type": [
+      "Ground"
+    ],
+    "base": {
+      "HP": 35,
+      "Attack": 100,
+      "Defense": 50,
+      "Sp. Attack": 50,
+      "Sp. Defense": 70,
+      "Speed": 120
+    }
+  },
+  {
+    "id": 52,
+    "name": {
+      "english": "Meowth",
+      "japanese": "ニャース",
+      "chinese": "喵喵",
+      "french": "Miaouss"
+    },
+    "type": [
+      "Normal"
+    ],
+    "base": {
+      "HP": 40,
+      "Attack": 45,
+      "Defense": 35,
+      "Sp. Attack": 40,
+      "Sp. Defense": 40,
+      "Speed": 90
+    }
+  },
+  {
+    "id": 53,
+    "name": {
+      "english": "Persian",
+      "japanese": "ペルシアン",
+      "chinese": "猫老大",
+      "french": "Persian"
+    },
+    "type": [
+      "Normal"
+    ],
+    "base": {
+      "HP": 65,
+      "Attack": 70,
+      "Defense": 60,
+      "Sp. Attack": 65,
+      "Sp. Defense": 65,
+      "Speed": 115
+    }
+  },
+  {
+    "id": 54,
+    "name": {
+      "english": "Psyduck",
+      "japanese": "コダック",
+      "chinese": "可达鸭",
+      "french": "Psykokwak"
+    },
+    "type": [
+      "Water"
+    ],
+    "base": {
+      "HP": 50,
+      "Attack": 52,
+      "Defense": 48,
+      "Sp. Attack": 65,
+      "Sp. Defense": 50,
+      "Speed": 55
+    }
+  },
+  {
+    "id": 55,
+    "name": {
+      "english": "Golduck",
+      "japanese": "ゴルダック",
+      "chinese": "哥达鸭",
+      "french": "Akwakwak"
+    },
+    "type": [
+      "Water"
+    ],
+    "base": {
+      "HP": 80,
+      "Attack": 82,
+      "Defense": 78,
+      "Sp. Attack": 95,
+      "Sp. Defense": 80,
+      "Speed": 85
+    }
+  },
+  {
+    "id": 56,
+    "name": {
+      "english": "Mankey",
+      "japanese": "マンキー",
+      "chinese": "猴怪",
+      "french": "Férosinge"
+    },
+    "type": [
+      "Fighting"
+    ],
+    "base": {
+      "HP": 40,
+      "Attack": 80,
+      "Defense": 35,
+      "Sp. Attack": 35,
+      "Sp. Defense": 45,
+      "Speed": 70
+    }
+  },
+  {
+    "id": 57,
+    "name": {
+      "english": "Primeape",
+      "japanese": "オコリザル",
+      "chinese": "火暴猴",
+      "french": "Colossinge"
+    },
+    "type": [
+      "Fighting"
+    ],
+    "base": {
+      "HP": 65,
+      "Attack": 105,
+      "Defense": 60,
+      "Sp. Attack": 60,
+      "Sp. Defense": 70,
+      "Speed": 95
+    }
+  },
+  {
+    "id": 58,
+    "name": {
+      "english": "Growlithe",
+      "japanese": "ガーディ",
+      "chinese": "卡蒂狗",
+      "french": "Caninos"
+    },
+    "type": [
+      "Fire"
+    ],
+    "base": {
+      "HP": 55,
+      "Attack": 70,
+      "Defense": 45,
+      "Sp. Attack": 70,
+      "Sp. Defense": 50,
+      "Speed": 60
+    }
+  },
+  {
+    "id": 59,
+    "name": {
+      "english": "Arcanine",
+      "japanese": "ウインディ",
+      "chinese": "风速狗",
+      "french": "Arcanin"
+    },
+    "type": [
+      "Fire"
+    ],
+    "base": {
+      "HP": 90,
+      "Attack": 110,
+      "Defense": 80,
+      "Sp. Attack": 100,
+      "Sp. Defense": 80,
+      "Speed": 95
+    }
+  },
+  {
+    "id": 60,
+    "name": {
+      "english": "Poliwag",
+      "japanese": "ニョロモ",
+      "chinese": "蚊香蝌蚪",
+      "french": "Ptitard"
+    },
+    "type": [
+      "Water"
+    ],
+    "base": {
+      "HP": 40,
+      "Attack": 50,
+      "Defense": 40,
+      "Sp. Attack": 40,
+      "Sp. Defense": 40,
+      "Speed": 90
+    }
+  },
+  {
+    "id": 61,
+    "name": {
+      "english": "Poliwhirl",
+      "japanese": "ニョロゾ",
+      "chinese": "蚊香君",
+      "french": "Têtarte"
+    },
+    "type": [
+      "Water"
+    ],
+    "base": {
+      "HP": 65,
+      "Attack": 65,
+      "Defense": 65,
+      "Sp. Attack": 50,
+      "Sp. Defense": 50,
+      "Speed": 90
+    }
+  },
+  {
+    "id": 62,
+    "name": {
+      "english": "Poliwrath",
+      "japanese": "ニョロボン",
+      "chinese": "蚊香泳士",
+      "french": "Tartard"
+    },
+    "type": [
+      "Water",
+      "Fighting"
+    ],
+    "base": {
+      "HP": 90,
+      "Attack": 95,
+      "Defense": 95,
+      "Sp. Attack": 70,
+      "Sp. Defense": 90,
+      "Speed": 70
+    }
+  },
+  {
+    "id": 63,
+    "name": {
+      "english": "Abra",
+      "japanese": "ケーシィ",
+      "chinese": "凯西",
+      "french": "Abra"
+    },
+    "type": [
+      "Psychic"
+    ],
+    "base": {
+      "HP": 25,
+      "Attack": 20,
+      "Defense": 15,
+      "Sp. Attack": 105,
+      "Sp. Defense": 55,
+      "Speed": 90
+    }
+  },
+  {
+    "id": 64,
+    "name": {
+      "english": "Kadabra",
+      "japanese": "ユンゲラー",
+      "chinese": "勇基拉",
+      "french": "Kadabra"
+    },
+    "type": [
+      "Psychic"
+    ],
+    "base": {
+      "HP": 40,
+      "Attack": 35,
+      "Defense": 30,
+      "Sp. Attack": 120,
+      "Sp. Defense": 70,
+      "Speed": 105
+    }
+  },
+  {
+    "id": 65,
+    "name": {
+      "english": "Alakazam",
+      "japanese": "フーディン",
+      "chinese": "胡地",
+      "french": "Alakazam"
+    },
+    "type": [
+      "Psychic"
+    ],
+    "base": {
+      "HP": 55,
+      "Attack": 50,
+      "Defense": 45,
+      "Sp. Attack": 135,
+      "Sp. Defense": 95,
+      "Speed": 120
+    }
+  },
+  {
+    "id": 66,
+    "name": {
+      "english": "Machop",
+      "japanese": "ワンリキー",
+      "chinese": "腕力",
+      "french": "Machoc"
+    },
+    "type": [
+      "Fighting"
+    ],
+    "base": {
+      "HP": 70,
+      "Attack": 80,
+      "Defense": 50,
+      "Sp. Attack": 35,
+      "Sp. Defense": 35,
+      "Speed": 35
+    }
+  },
+  {
+    "id": 67,
+    "name": {
+      "english": "Machoke",
+      "japanese": "ゴーリキー",
+      "chinese": "豪力",
+      "french": "Machopeur"
+    },
+    "type": [
+      "Fighting"
+    ],
+    "base": {
+      "HP": 80,
+      "Attack": 100,
+      "Defense": 70,
+      "Sp. Attack": 50,
+      "Sp. Defense": 60,
+      "Speed": 45
+    }
+  },
+  {
+    "id": 68,
+    "name": {
+      "english": "Machamp",
+      "japanese": "カイリキー",
+      "chinese": "怪力",
+      "french": "Mackogneur"
+    },
+    "type": [
+      "Fighting"
+    ],
+    "base": {
+      "HP": 90,
+      "Attack": 130,
+      "Defense": 80,
+      "Sp. Attack": 65,
+      "Sp. Defense": 85,
+      "Speed": 55
+    }
+  },
+  {
+    "id": 69,
+    "name": {
+      "english": "Bellsprout",
+      "japanese": "マダツボミ",
+      "chinese": "喇叭芽",
+      "french": "Chétiflor"
+    },
+    "type": [
+      "Grass",
+      "Poison"
+    ],
+    "base": {
+      "HP": 50,
+      "Attack": 75,
+      "Defense": 35,
+      "Sp. Attack": 70,
+      "Sp. Defense": 30,
+      "Speed": 40
+    }
+  },
+  {
+    "id": 70,
+    "name": {
+      "english": "Weepinbell",
+      "japanese": "ウツドン",
+      "chinese": "口呆花",
+      "french": "Boustiflor"
+    },
+    "type": [
+      "Grass",
+      "Poison"
+    ],
+    "base": {
+      "HP": 65,
+      "Attack": 90,
+      "Defense": 50,
+      "Sp. Attack": 85,
+      "Sp. Defense": 45,
+      "Speed": 55
+    }
+  },
+  {
+    "id": 71,
+    "name": {
+      "english": "Victreebel",
+      "japanese": "ウツボット",
+      "chinese": "大食花",
+      "french": "Empiflor"
+    },
+    "type": [
+      "Grass",
+      "Poison"
+    ],
+    "base": {
+      "HP": 80,
+      "Attack": 105,
+      "Defense": 65,
+      "Sp. Attack": 100,
+      "Sp. Defense": 70,
+      "Speed": 70
+    }
+  },
+  {
+    "id": 72,
+    "name": {
+      "english": "Tentacool",
+      "japanese": "メノクラゲ",
+      "chinese": "玛瑙水母",
+      "french": "Tentacool"
+    },
+    "type": [
+      "Water",
+      "Poison"
+    ],
+    "base": {
+      "HP": 40,
+      "Attack": 40,
+      "Defense": 35,
+      "Sp. Attack": 50,
+      "Sp. Defense": 100,
+      "Speed": 70
+    }
+  },
+  {
+    "id": 73,
+    "name": {
+      "english": "Tentacruel",
+      "japanese": "ドククラゲ",
+      "chinese": "毒刺水母",
+      "french": "Tentacruel"
+    },
+    "type": [
+      "Water",
+      "Poison"
+    ],
+    "base": {
+      "HP": 80,
+      "Attack": 70,
+      "Defense": 65,
+      "Sp. Attack": 80,
+      "Sp. Defense": 120,
+      "Speed": 100
+    }
+  },
+  {
+    "id": 74,
+    "name": {
+      "english": "Geodude",
+      "japanese": "イシツブテ",
+      "chinese": "小拳石",
+      "french": "Racaillou"
+    },
+    "type": [
+      "Rock",
+      "Ground"
+    ],
+    "base": {
+      "HP": 40,
+      "Attack": 80,
+      "Defense": 100,
+      "Sp. Attack": 30,
+      "Sp. Defense": 30,
+      "Speed": 20
+    }
+  },
+  {
+    "id": 75,
+    "name": {
+      "english": "Graveler",
+      "japanese": "ゴローン",
+      "chinese": "隆隆石",
+      "french": "Gravalanch"
+    },
+    "type": [
+      "Rock",
+      "Ground"
+    ],
+    "base": {
+      "HP": 55,
+      "Attack": 95,
+      "Defense": 115,
+      "Sp. Attack": 45,
+      "Sp. Defense": 45,
+      "Speed": 35
+    }
+  },
+  {
+    "id": 76,
+    "name": {
+      "english": "Golem",
+      "japanese": "ゴローニャ",
+      "chinese": "隆隆岩",
+      "french": "Grolem"
+    },
+    "type": [
+      "Rock",
+      "Ground"
+    ],
+    "base": {
+      "HP": 80,
+      "Attack": 120,
+      "Defense": 130,
+      "Sp. Attack": 55,
+      "Sp. Defense": 65,
+      "Speed": 45
+    }
+  },
+  {
+    "id": 77,
+    "name": {
+      "english": "Ponyta",
+      "japanese": "ポニータ",
+      "chinese": "小火马",
+      "french": "Ponyta"
+    },
+    "type": [
+      "Fire"
+    ],
+    "base": {
+      "HP": 50,
+      "Attack": 85,
+      "Defense": 55,
+      "Sp. Attack": 65,
+      "Sp. Defense": 65,
+      "Speed": 90
+    }
+  },
+  {
+    "id": 78,
+    "name": {
+      "english": "Rapidash",
+      "japanese": "ギャロップ",
+      "chinese": "烈焰马",
+      "french": "Galopa"
+    },
+    "type": [
+      "Fire"
+    ],
+    "base": {
+      "HP": 65,
+      "Attack": 100,
+      "Defense": 70,
+      "Sp. Attack": 80,
+      "Sp. Defense": 80,
+      "Speed": 105
+    }
+  },
+  {
+    "id": 79,
+    "name": {
+      "english": "Slowpoke",
+      "japanese": "ヤドン",
+      "chinese": "呆呆兽",
+      "french": "Ramoloss"
+    },
+    "type": [
+      "Water",
+      "Psychic"
+    ],
+    "base": {
+      "HP": 90,
+      "Attack": 65,
+      "Defense": 65,
+      "Sp. Attack": 40,
+      "Sp. Defense": 40,
+      "Speed": 15
+    }
+  },
+  {
+    "id": 80,
+    "name": {
+      "english": "Slowbro",
+      "japanese": "ヤドラン",
+      "chinese": "呆壳兽",
+      "french": "Flagadoss"
+    },
+    "type": [
+      "Water",
+      "Psychic"
+    ],
+    "base": {
+      "HP": 95,
+      "Attack": 75,
+      "Defense": 110,
+      "Sp. Attack": 100,
+      "Sp. Defense": 80,
+      "Speed": 30
+    }
+  },
+  {
+    "id": 81,
+    "name": {
+      "english": "Magnemite",
+      "japanese": "コイル",
+      "chinese": "小磁怪",
+      "french": "Magnéti"
+    },
+    "type": [
+      "Electric",
+      "Steel"
+    ],
+    "base": {
+      "HP": 25,
+      "Attack": 35,
+      "Defense": 70,
+      "Sp. Attack": 95,
+      "Sp. Defense": 55,
+      "Speed": 45
+    }
+  },
+  {
+    "id": 82,
+    "name": {
+      "english": "Magneton",
+      "japanese": "レアコイル",
+      "chinese": "三合一磁怪",
+      "french": "Magnéton"
+    },
+    "type": [
+      "Electric",
+      "Steel"
+    ],
+    "base": {
+      "HP": 50,
+      "Attack": 60,
+      "Defense": 95,
+      "Sp. Attack": 120,
+      "Sp. Defense": 70,
+      "Speed": 70
+    }
+  },
+  {
+    "id": 83,
+    "name": {
+      "english": "Farfetch'd",
+      "japanese": "カモネギ",
+      "chinese": "大葱鸭",
+      "french": "Canarticho"
+    },
+    "type": [
+      "Normal",
+      "Flying"
+    ],
+    "base": {
+      "HP": 52,
+      "Attack": 90,
+      "Defense": 55,
+      "Sp. Attack": 58,
+      "Sp. Defense": 62,
+      "Speed": 60
+    }
+  },
+  {
+    "id": 84,
+    "name": {
+      "english": "Doduo",
+      "japanese": "ドードー",
+      "chinese": "嘟嘟",
+      "french": "Doduo"
+    },
+    "type": [
+      "Normal",
+      "Flying"
+    ],
+    "base": {
+      "HP": 35,
+      "Attack": 85,
+      "Defense": 45,
+      "Sp. Attack": 35,
+      "Sp. Defense": 35,
+      "Speed": 75
+    }
+  },
+  {
+    "id": 85,
+    "name": {
+      "english": "Dodrio",
+      "japanese": "ドードリオ",
+      "chinese": "嘟嘟利",
+      "french": "Dodrio"
+    },
+    "type": [
+      "Normal",
+      "Flying"
+    ],
+    "base": {
+      "HP": 60,
+      "Attack": 110,
+      "Defense": 70,
+      "Sp. Attack": 60,
+      "Sp. Defense": 60,
+      "Speed": 110
+    }
+  },
+  {
+    "id": 86,
+    "name": {
+      "english": "Seel",
+      "japanese": "パウワウ",
+      "chinese": "小海狮",
+      "french": "Otaria"
+    },
+    "type": [
+      "Water"
+    ],
+    "base": {
+      "HP": 65,
+      "Attack": 45,
+      "Defense": 55,
+      "Sp. Attack": 45,
+      "Sp. Defense": 70,
+      "Speed": 45
+    }
+  },
+  {
+    "id": 87,
+    "name": {
+      "english": "Dewgong",
+      "japanese": "ジュゴン",
+      "chinese": "白海狮",
+      "french": "Lamantine"
+    },
+    "type": [
+      "Water",
+      "Ice"
+    ],
+    "base": {
+      "HP": 90,
+      "Attack": 70,
+      "Defense": 80,
+      "Sp. Attack": 70,
+      "Sp. Defense": 95,
+      "Speed": 70
+    }
+  },
+  {
+    "id": 88,
+    "name": {
+      "english": "Grimer",
+      "japanese": "ベトベター",
+      "chinese": "臭泥",
+      "french": "Tadmorv"
+    },
+    "type": [
+      "Poison"
+    ],
+    "base": {
+      "HP": 80,
+      "Attack": 80,
+      "Defense": 50,
+      "Sp. Attack": 40,
+      "Sp. Defense": 50,
+      "Speed": 25
+    }
+  },
+  {
+    "id": 89,
+    "name": {
+      "english": "Muk",
+      "japanese": "ベトベトン",
+      "chinese": "臭臭泥",
+      "french": "Grotadmorv"
+    },
+    "type": [
+      "Poison"
+    ],
+    "base": {
+      "HP": 105,
+      "Attack": 105,
+      "Defense": 75,
+      "Sp. Attack": 65,
+      "Sp. Defense": 100,
+      "Speed": 50
+    }
+  },
+  {
+    "id": 90,
+    "name": {
+      "english": "Shellder",
+      "japanese": "シェルダー",
+      "chinese": "大舌贝",
+      "french": "Kokiyas"
+    },
+    "type": [
+      "Water"
+    ],
+    "base": {
+      "HP": 30,
+      "Attack": 65,
+      "Defense": 100,
+      "Sp. Attack": 45,
+      "Sp. Defense": 25,
+      "Speed": 40
+    }
+  },
+  {
+    "id": 91,
+    "name": {
+      "english": "Cloyster",
+      "japanese": "パルシェン",
+      "chinese": "刺甲贝",
+      "french": "Crustabri"
+    },
+    "type": [
+      "Water",
+      "Ice"
+    ],
+    "base": {
+      "HP": 50,
+      "Attack": 95,
+      "Defense": 180,
+      "Sp. Attack": 85,
+      "Sp. Defense": 45,
+      "Speed": 70
+    }
+  },
+  {
+    "id": 92,
+    "name": {
+      "english": "Gastly",
+      "japanese": "ゴース",
+      "chinese": "鬼斯",
+      "french": "Fantominus"
+    },
+    "type": [
+      "Ghost",
+      "Poison"
+    ],
+    "base": {
+      "HP": 30,
+      "Attack": 35,
+      "Defense": 30,
+      "Sp. Attack": 100,
+      "Sp. Defense": 35,
+      "Speed": 80
+    }
+  },
+  {
+    "id": 93,
+    "name": {
+      "english": "Haunter",
+      "japanese": "ゴースト",
+      "chinese": "鬼斯通",
+      "french": "Spectrum"
+    },
+    "type": [
+      "Ghost",
+      "Poison"
+    ],
+    "base": {
+      "HP": 45,
+      "Attack": 50,
+      "Defense": 45,
+      "Sp. Attack": 115,
+      "Sp. Defense": 55,
+      "Speed": 95
+    }
+  },
+  {
+    "id": 94,
+    "name": {
+      "english": "Gengar",
+      "japanese": "ゲンガー",
+      "chinese": "耿鬼",
+      "french": "Ectoplasma"
+    },
+    "type": [
+      "Ghost",
+      "Poison"
+    ],
+    "base": {
+      "HP": 60,
+      "Attack": 65,
+      "Defense": 60,
+      "Sp. Attack": 130,
+      "Sp. Defense": 75,
+      "Speed": 110
+    }
+  },
+  {
+    "id": 95,
+    "name": {
+      "english": "Onix",
+      "japanese": "イワーク",
+      "chinese": "大岩蛇",
+      "french": "Onix"
+    },
+    "type": [
+      "Rock",
+      "Ground"
+    ],
+    "base": {
+      "HP": 35,
+      "Attack": 45,
+      "Defense": 160,
+      "Sp. Attack": 30,
+      "Sp. Defense": 45,
+      "Speed": 70
+    }
+  },
+  {
+    "id": 96,
+    "name": {
+      "english": "Drowzee",
+      "japanese": "スリープ",
+      "chinese": "催眠貘",
+      "french": "Soporifik"
+    },
+    "type": [
+      "Psychic"
+    ],
+    "base": {
+      "HP": 60,
+      "Attack": 48,
+      "Defense": 45,
+      "Sp. Attack": 43,
+      "Sp. Defense": 90,
+      "Speed": 42
+    }
+  },
+  {
+    "id": 97,
+    "name": {
+      "english": "Hypno",
+      "japanese": "スリーパー",
+      "chinese": "引梦貘人",
+      "french": "Hypnomade"
+    },
+    "type": [
+      "Psychic"
+    ],
+    "base": {
+      "HP": 85,
+      "Attack": 73,
+      "Defense": 70,
+      "Sp. Attack": 73,
+      "Sp. Defense": 115,
+      "Speed": 67
+    }
+  },
+  {
+    "id": 98,
+    "name": {
+      "english": "Krabby",
+      "japanese": "クラブ",
+      "chinese": "大钳蟹",
+      "french": "Krabby"
+    },
+    "type": [
+      "Water"
+    ],
+    "base": {
+      "HP": 30,
+      "Attack": 105,
+      "Defense": 90,
+      "Sp. Attack": 25,
+      "Sp. Defense": 25,
+      "Speed": 50
+    }
+  },
+  {
+    "id": 99,
+    "name": {
+      "english": "Kingler",
+      "japanese": "キングラー",
+      "chinese": "巨钳蟹",
+      "french": "Krabboss"
+    },
+    "type": [
+      "Water"
+    ],
+    "base": {
+      "HP": 55,
+      "Attack": 130,
+      "Defense": 115,
+      "Sp. Attack": 50,
+      "Sp. Defense": 50,
+      "Speed": 75
+    }
+  },
+  {
+    "id": 100,
+    "name": {
+      "english": "Voltorb",
+      "japanese": "ビリリダマ",
+      "chinese": "霹雳电球",
+      "french": "Voltorbe"
+    },
+    "type": [
+      "Electric"
+    ],
+    "base": {
+      "HP": 40,
+      "Attack": 30,
+      "Defense": 50,
+      "Sp. Attack": 55,
+      "Sp. Defense": 55,
+      "Speed": 100
+    }
+  },
+  {
+    "id": 101,
+    "name": {
+      "english": "Electrode",
+      "japanese": "マルマイン",
+      "chinese": "顽皮雷弹",
+      "french": "Électrode"
+    },
+    "type": [
+      "Electric"
+    ],
+    "base": {
+      "HP": 60,
+      "Attack": 50,
+      "Defense": 70,
+      "Sp. Attack": 80,
+      "Sp. Defense": 80,
+      "Speed": 150
+    }
+  },
+  {
+    "id": 102,
+    "name": {
+      "english": "Exeggcute",
+      "japanese": "タマタマ",
+      "chinese": "蛋蛋",
+      "french": "Noeunoeuf"
+    },
+    "type": [
+      "Grass",
+      "Psychic"
+    ],
+    "base": {
+      "HP": 60,
+      "Attack": 40,
+      "Defense": 80,
+      "Sp. Attack": 60,
+      "Sp. Defense": 45,
+      "Speed": 40
+    }
+  },
+  {
+    "id": 103,
+    "name": {
+      "english": "Exeggutor",
+      "japanese": "ナッシー",
+      "chinese": "椰蛋树",
+      "french": "Noadkoko"
+    },
+    "type": [
+      "Grass",
+      "Psychic"
+    ],
+    "base": {
+      "HP": 95,
+      "Attack": 95,
+      "Defense": 85,
+      "Sp. Attack": 125,
+      "Sp. Defense": 75,
+      "Speed": 55
+    }
+  },
+  {
+    "id": 104,
+    "name": {
+      "english": "Cubone",
+      "japanese": "カラカラ",
+      "chinese": "卡拉卡拉",
+      "french": "Osselait"
+    },
+    "type": [
+      "Ground"
+    ],
+    "base": {
+      "HP": 50,
+      "Attack": 50,
+      "Defense": 95,
+      "Sp. Attack": 40,
+      "Sp. Defense": 50,
+      "Speed": 35
+    }
+  },
+  {
+    "id": 105,
+    "name": {
+      "english": "Marowak",
+      "japanese": "ガラガラ",
+      "chinese": "嘎啦嘎啦",
+      "french": "Ossatueur"
+    },
+    "type": [
+      "Ground"
+    ],
+    "base": {
+      "HP": 60,
+      "Attack": 80,
+      "Defense": 110,
+      "Sp. Attack": 50,
+      "Sp. Defense": 80,
+      "Speed": 45
+    }
+  },
+  {
+    "id": 106,
+    "name": {
+      "english": "Hitmonlee",
+      "japanese": "サワムラー",
+      "chinese": "飞腿郎",
+      "french": "Kicklee"
+    },
+    "type": [
+      "Fighting"
+    ],
+    "base": {
+      "HP": 50,
+      "Attack": 120,
+      "Defense": 53,
+      "Sp. Attack": 35,
+      "Sp. Defense": 110,
+      "Speed": 87
+    }
+  },
+  {
+    "id": 107,
+    "name": {
+      "english": "Hitmonchan",
+      "japanese": "エビワラー",
+      "chinese": "快拳郎",
+      "french": "Tygnon"
+    },
+    "type": [
+      "Fighting"
+    ],
+    "base": {
+      "HP": 50,
+      "Attack": 105,
+      "Defense": 79,
+      "Sp. Attack": 35,
+      "Sp. Defense": 110,
+      "Speed": 76
+    }
+  },
+  {
+    "id": 108,
+    "name": {
+      "english": "Lickitung",
+      "japanese": "ベロリンガ",
+      "chinese": "大舌头",
+      "french": "Excelangue"
+    },
+    "type": [
+      "Normal"
+    ],
+    "base": {
+      "HP": 90,
+      "Attack": 55,
+      "Defense": 75,
+      "Sp. Attack": 60,
+      "Sp. Defense": 75,
+      "Speed": 30
+    }
+  },
+  {
+    "id": 109,
+    "name": {
+      "english": "Koffing",
+      "japanese": "ドガース",
+      "chinese": "瓦斯弹",
+      "french": "Smogo"
+    },
+    "type": [
+      "Poison"
+    ],
+    "base": {
+      "HP": 40,
+      "Attack": 65,
+      "Defense": 95,
+      "Sp. Attack": 60,
+      "Sp. Defense": 45,
+      "Speed": 35
+    }
+  },
+  {
+    "id": 110,
+    "name": {
+      "english": "Weezing",
+      "japanese": "マタドガス",
+      "chinese": "双弹瓦斯",
+      "french": "Smogogo"
+    },
+    "type": [
+      "Poison"
+    ],
+    "base": {
+      "HP": 65,
+      "Attack": 90,
+      "Defense": 120,
+      "Sp. Attack": 85,
+      "Sp. Defense": 70,
+      "Speed": 60
+    }
+  },
+  {
+    "id": 111,
+    "name": {
+      "english": "Rhyhorn",
+      "japanese": "サイホーン",
+      "chinese": "独角犀牛",
+      "french": "Rhinocorne"
+    },
+    "type": [
+      "Ground",
+      "Rock"
+    ],
+    "base": {
+      "HP": 80,
+      "Attack": 85,
+      "Defense": 95,
+      "Sp. Attack": 30,
+      "Sp. Defense": 30,
+      "Speed": 25
+    }
+  },
+  {
+    "id": 112,
+    "name": {
+      "english": "Rhydon",
+      "japanese": "サイドン",
+      "chinese": "钻角犀兽",
+      "french": "Rhinoféros"
+    },
+    "type": [
+      "Ground",
+      "Rock"
+    ],
+    "base": {
+      "HP": 105,
+      "Attack": 130,
+      "Defense": 120,
+      "Sp. Attack": 45,
+      "Sp. Defense": 45,
+      "Speed": 40
+    }
+  },
+  {
+    "id": 113,
+    "name": {
+      "english": "Chansey",
+      "japanese": "ラッキー",
+      "chinese": "吉利蛋",
+      "french": "Leveinard"
+    },
+    "type": [
+      "Normal"
+    ],
+    "base": {
+      "HP": 250,
+      "Attack": 5,
+      "Defense": 5,
+      "Sp. Attack": 35,
+      "Sp. Defense": 105,
+      "Speed": 50
+    }
+  },
+  {
+    "id": 114,
+    "name": {
+      "english": "Tangela",
+      "japanese": "モンジャラ",
+      "chinese": "蔓藤怪",
+      "french": "Saquedeneu"
+    },
+    "type": [
+      "Grass"
+    ],
+    "base": {
+      "HP": 65,
+      "Attack": 55,
+      "Defense": 115,
+      "Sp. Attack": 100,
+      "Sp. Defense": 40,
+      "Speed": 60
+    }
+  },
+  {
+    "id": 115,
+    "name": {
+      "english": "Kangaskhan",
+      "japanese": "ガルーラ",
+      "chinese": "袋兽",
+      "french": "Kangourex"
+    },
+    "type": [
+      "Normal"
+    ],
+    "base": {
+      "HP": 105,
+      "Attack": 95,
+      "Defense": 80,
+      "Sp. Attack": 40,
+      "Sp. Defense": 80,
+      "Speed": 90
+    }
+  },
+  {
+    "id": 116,
+    "name": {
+      "english": "Horsea",
+      "japanese": "タッツー",
+      "chinese": "墨海马",
+      "french": "Hypotrempe"
+    },
+    "type": [
+      "Water"
+    ],
+    "base": {
+      "HP": 30,
+      "Attack": 40,
+      "Defense": 70,
+      "Sp. Attack": 70,
+      "Sp. Defense": 25,
+      "Speed": 60
+    }
+  },
+  {
+    "id": 117,
+    "name": {
+      "english": "Seadra",
+      "japanese": "シードラ",
+      "chinese": "海刺龙",
+      "french": "Hypocéan"
+    },
+    "type": [
+      "Water"
+    ],
+    "base": {
+      "HP": 55,
+      "Attack": 65,
+      "Defense": 95,
+      "Sp. Attack": 95,
+      "Sp. Defense": 45,
+      "Speed": 85
+    }
+  },
+  {
+    "id": 118,
+    "name": {
+      "english": "Goldeen",
+      "japanese": "トサキント",
+      "chinese": "角金鱼",
+      "french": "Poissirène"
+    },
+    "type": [
+      "Water"
+    ],
+    "base": {
+      "HP": 45,
+      "Attack": 67,
+      "Defense": 60,
+      "Sp. Attack": 35,
+      "Sp. Defense": 50,
+      "Speed": 63
+    }
+  },
+  {
+    "id": 119,
+    "name": {
+      "english": "Seaking",
+      "japanese": "アズマオウ",
+      "chinese": "金鱼王",
+      "french": "Poissoroy"
+    },
+    "type": [
+      "Water"
+    ],
+    "base": {
+      "HP": 80,
+      "Attack": 92,
+      "Defense": 65,
+      "Sp. Attack": 65,
+      "Sp. Defense": 80,
+      "Speed": 68
+    }
+  },
+  {
+    "id": 120,
+    "name": {
+      "english": "Staryu",
+      "japanese": "ヒトデマン",
+      "chinese": "海星星",
+      "french": "Stari"
+    },
+    "type": [
+      "Water"
+    ],
+    "base": {
+      "HP": 30,
+      "Attack": 45,
+      "Defense": 55,
+      "Sp. Attack": 70,
+      "Sp. Defense": 55,
+      "Speed": 85
+    }
+  },
+  {
+    "id": 121,
+    "name": {
+      "english": "Starmie",
+      "japanese": "スターミー",
+      "chinese": "宝石海星",
+      "french": "Staross"
+    },
+    "type": [
+      "Water",
+      "Psychic"
+    ],
+    "base": {
+      "HP": 60,
+      "Attack": 75,
+      "Defense": 85,
+      "Sp. Attack": 100,
+      "Sp. Defense": 85,
+      "Speed": 115
+    }
+  },
+  {
+    "id": 122,
+    "name": {
+      "english": "Mr. Mime",
+      "japanese": "バリヤード",
+      "chinese": "魔墙人偶",
+      "french": "M. Mime"
+    },
+    "type": [
+      "Psychic",
+      "Fairy"
+    ],
+    "base": {
+      "HP": 40,
+      "Attack": 45,
+      "Defense": 65,
+      "Sp. Attack": 100,
+      "Sp. Defense": 120,
+      "Speed": 90
+    }
+  },
+  {
+    "id": 123,
+    "name": {
+      "english": "Scyther",
+      "japanese": "ストライク",
+      "chinese": "飞天螳螂",
+      "french": "Insécateur"
+    },
+    "type": [
+      "Bug",
+      "Flying"
+    ],
+    "base": {
+      "HP": 70,
+      "Attack": 110,
+      "Defense": 80,
+      "Sp. Attack": 55,
+      "Sp. Defense": 80,
+      "Speed": 105
+    }
+  },
+  {
+    "id": 124,
+    "name": {
+      "english": "Jynx",
+      "japanese": "ルージュラ",
+      "chinese": "迷唇姐",
+      "french": "Lippoutou"
+    },
+    "type": [
+      "Ice",
+      "Psychic"
+    ],
+    "base": {
+      "HP": 65,
+      "Attack": 50,
+      "Defense": 35,
+      "Sp. Attack": 115,
+      "Sp. Defense": 95,
+      "Speed": 95
+    }
+  },
+  {
+    "id": 125,
+    "name": {
+      "english": "Electabuzz",
+      "japanese": "エレブー",
+      "chinese": "电击兽",
+      "french": "Élektek"
+    },
+    "type": [
+      "Electric"
+    ],
+    "base": {
+      "HP": 65,
+      "Attack": 83,
+      "Defense": 57,
+      "Sp. Attack": 95,
+      "Sp. Defense": 85,
+      "Speed": 105
+    }
+  },
+  {
+    "id": 126,
+    "name": {
+      "english": "Magmar",
+      "japanese": "ブーバー",
+      "chinese": "鸭嘴火兽",
+      "french": "Magmar"
+    },
+    "type": [
+      "Fire"
+    ],
+    "base": {
+      "HP": 65,
+      "Attack": 95,
+      "Defense": 57,
+      "Sp. Attack": 100,
+      "Sp. Defense": 85,
+      "Speed": 93
+    }
+  },
+  {
+    "id": 127,
+    "name": {
+      "english": "Pinsir",
+      "japanese": "カイロス",
+      "chinese": "凯罗斯",
+      "french": "Scarabrute"
+    },
+    "type": [
+      "Bug"
+    ],
+    "base": {
+      "HP": 65,
+      "Attack": 125,
+      "Defense": 100,
+      "Sp. Attack": 55,
+      "Sp. Defense": 70,
+      "Speed": 85
+    }
+  },
+  {
+    "id": 128,
+    "name": {
+      "english": "Tauros",
+      "japanese": "ケンタロス",
+      "chinese": "肯泰罗",
+      "french": "Tauros"
+    },
+    "type": [
+      "Normal"
+    ],
+    "base": {
+      "HP": 75,
+      "Attack": 100,
+      "Defense": 95,
+      "Sp. Attack": 40,
+      "Sp. Defense": 70,
+      "Speed": 110
+    }
+  },
+  {
+    "id": 129,
+    "name": {
+      "english": "Magikarp",
+      "japanese": "コイキング",
+      "chinese": "鲤鱼王",
+      "french": "Magicarpe"
+    },
+    "type": [
+      "Water"
+    ],
+    "base": {
+      "HP": 20,
+      "Attack": 10,
+      "Defense": 55,
+      "Sp. Attack": 15,
+      "Sp. Defense": 20,
+      "Speed": 80
+    }
+  },
+  {
+    "id": 130,
+    "name": {
+      "english": "Gyarados",
+      "japanese": "ギャラドス",
+      "chinese": "暴鲤龙",
+      "french": "Léviator"
+    },
+    "type": [
+      "Water",
+      "Flying"
+    ],
+    "base": {
+      "HP": 95,
+      "Attack": 125,
+      "Defense": 79,
+      "Sp. Attack": 60,
+      "Sp. Defense": 100,
+      "Speed": 81
+    }
+  },
+  {
+    "id": 131,
+    "name": {
+      "english": "Lapras",
+      "japanese": "ラプラス",
+      "chinese": "拉普拉斯",
+      "french": "Lokhlass"
+    },
+    "type": [
+      "Water",
+      "Ice"
+    ],
+    "base": {
+      "HP": 130,
+      "Attack": 85,
+      "Defense": 80,
+      "Sp. Attack": 85,
+      "Sp. Defense": 95,
+      "Speed": 60
+    }
+  },
+  {
+    "id": 132,
+    "name": {
+      "english": "Ditto",
+      "japanese": "メタモン",
+      "chinese": "百变怪",
+      "french": "Métamorph"
+    },
+    "type": [
+      "Normal"
+    ],
+    "base": {
+      "HP": 48,
+      "Attack": 48,
+      "Defense": 48,
+      "Sp. Attack": 48,
+      "Sp. Defense": 48,
+      "Speed": 48
+    }
+  },
+  {
+    "id": 133,
+    "name": {
+      "english": "Eevee",
+      "japanese": "イーブイ",
+      "chinese": "伊布",
+      "french": "Évoli"
+    },
+    "type": [
+      "Normal"
+    ],
+    "base": {
+      "HP": 55,
+      "Attack": 55,
+      "Defense": 50,
+      "Sp. Attack": 45,
+      "Sp. Defense": 65,
+      "Speed": 55
+    }
+  },
+  {
+    "id": 134,
+    "name": {
+      "english": "Vaporeon",
+      "japanese": "シャワーズ",
+      "chinese": "水伊布",
+      "french": "Aquali"
+    },
+    "type": [
+      "Water"
+    ],
+    "base": {
+      "HP": 130,
+      "Attack": 65,
+      "Defense": 60,
+      "Sp. Attack": 110,
+      "Sp. Defense": 95,
+      "Speed": 65
+    }
+  },
+  {
+    "id": 135,
+    "name": {
+      "english": "Jolteon",
+      "japanese": "サンダース",
+      "chinese": "雷伊布",
+      "french": "Voltali"
+    },
+    "type": [
+      "Electric"
+    ],
+    "base": {
+      "HP": 65,
+      "Attack": 65,
+      "Defense": 60,
+      "Sp. Attack": 110,
+      "Sp. Defense": 95,
+      "Speed": 130
+    }
+  },
+  {
+    "id": 136,
+    "name": {
+      "english": "Flareon",
+      "japanese": "ブースター",
+      "chinese": "火伊布",
+      "french": "Pyroli"
+    },
+    "type": [
+      "Fire"
+    ],
+    "base": {
+      "HP": 65,
+      "Attack": 130,
+      "Defense": 60,
+      "Sp. Attack": 95,
+      "Sp. Defense": 110,
+      "Speed": 65
+    }
+  },
+  {
+    "id": 137,
+    "name": {
+      "english": "Porygon",
+      "japanese": "ポリゴン",
+      "chinese": "多边兽",
+      "french": "Porygon"
+    },
+    "type": [
+      "Normal"
+    ],
+    "base": {
+      "HP": 65,
+      "Attack": 60,
+      "Defense": 70,
+      "Sp. Attack": 85,
+      "Sp. Defense": 75,
+      "Speed": 40
+    }
+  },
+  {
+    "id": 138,
+    "name": {
+      "english": "Omanyte",
+      "japanese": "オムナイト",
+      "chinese": "菊石兽",
+      "french": "Amonita"
+    },
+    "type": [
+      "Rock",
+      "Water"
+    ],
+    "base": {
+      "HP": 35,
+      "Attack": 40,
+      "Defense": 100,
+      "Sp. Attack": 90,
+      "Sp. Defense": 55,
+      "Speed": 35
+    }
+  },
+  {
+    "id": 139,
+    "name": {
+      "english": "Omastar",
+      "japanese": "オムスター",
+      "chinese": "多刺菊石兽",
+      "french": "Amonistar"
+    },
+    "type": [
+      "Rock",
+      "Water"
+    ],
+    "base": {
+      "HP": 70,
+      "Attack": 60,
+      "Defense": 125,
+      "Sp. Attack": 115,
+      "Sp. Defense": 70,
+      "Speed": 55
+    }
+  },
+  {
+    "id": 140,
+    "name": {
+      "english": "Kabuto",
+      "japanese": "カブト",
+      "chinese": "化石盔",
+      "french": "Kabuto"
+    },
+    "type": [
+      "Rock",
+      "Water"
+    ],
+    "base": {
+      "HP": 30,
+      "Attack": 80,
+      "Defense": 90,
+      "Sp. Attack": 55,
+      "Sp. Defense": 45,
+      "Speed": 55
+    }
+  },
+  {
+    "id": 141,
+    "name": {
+      "english": "Kabutops",
+      "japanese": "カブトプス",
+      "chinese": "镰刀盔",
+      "french": "Kabutops"
+    },
+    "type": [
+      "Rock",
+      "Water"
+    ],
+    "base": {
+      "HP": 60,
+      "Attack": 115,
+      "Defense": 105,
+      "Sp. Attack": 65,
+      "Sp. Defense": 70,
+      "Speed": 80
+    }
+  },
+  {
+    "id": 142,
+    "name": {
+      "english": "Aerodactyl",
+      "japanese": "プテラ",
+      "chinese": "化石翼龙",
+      "french": "Ptéra"
+    },
+    "type": [
+      "Rock",
+      "Flying"
+    ],
+    "base": {
+      "HP": 80,
+      "Attack": 105,
+      "Defense": 65,
+      "Sp. Attack": 60,
+      "Sp. Defense": 75,
+      "Speed": 130
+    }
+  },
+  {
+    "id": 143,
+    "name": {
+      "english": "Snorlax",
+      "japanese": "カビゴン",
+      "chinese": "卡比兽",
+      "french": "Ronflex"
+    },
+    "type": [
+      "Normal"
+    ],
+    "base": {
+      "HP": 160,
+      "Attack": 110,
+      "Defense": 65,
+      "Sp. Attack": 65,
+      "Sp. Defense": 110,
+      "Speed": 30
+    }
+  },
+  {
+    "id": 144,
+    "name": {
+      "english": "Articuno",
+      "japanese": "フリーザー",
+      "chinese": "急冻鸟",
+      "french": "Artikodin"
+    },
+    "type": [
+      "Ice",
+      "Flying"
+    ],
+    "base": {
+      "HP": 90,
+      "Attack": 85,
+      "Defense": 100,
+      "Sp. Attack": 95,
+      "Sp. Defense": 125,
+      "Speed": 85
+    }
+  },
+  {
+    "id": 145,
+    "name": {
+      "english": "Zapdos",
+      "japanese": "サンダー",
+      "chinese": "闪电鸟",
+      "french": "Électhor"
+    },
+    "type": [
+      "Electric",
+      "Flying"
+    ],
+    "base": {
+      "HP": 90,
+      "Attack": 90,
+      "Defense": 85,
+      "Sp. Attack": 125,
+      "Sp. Defense": 90,
+      "Speed": 100
+    }
+  },
+  {
+    "id": 146,
+    "name": {
+      "english": "Moltres",
+      "japanese": "ファイヤー",
+      "chinese": "火焰鸟",
+      "french": "Sulfura"
+    },
+    "type": [
+      "Fire",
+      "Flying"
+    ],
+    "base": {
+      "HP": 90,
+      "Attack": 100,
+      "Defense": 90,
+      "Sp. Attack": 125,
+      "Sp. Defense": 85,
+      "Speed": 90
+    }
+  },
+  {
+    "id": 147,
+    "name": {
+      "english": "Dratini",
+      "japanese": "ミニリュウ",
+      "chinese": "迷你龙",
+      "french": "Minidraco"
+    },
+    "type": [
+      "Dragon"
+    ],
+    "base": {
+      "HP": 41,
+      "Attack": 64,
+      "Defense": 45,
+      "Sp. Attack": 50,
+      "Sp. Defense": 50,
+      "Speed": 50
+    }
+  },
+  {
+    "id": 148,
+    "name": {
+      "english": "Dragonair",
+      "japanese": "ハクリュー",
+      "chinese": "哈克龙",
+      "french": "Draco"
+    },
+    "type": [
+      "Dragon"
+    ],
+    "base": {
+      "HP": 61,
+      "Attack": 84,
+      "Defense": 65,
+      "Sp. Attack": 70,
+      "Sp. Defense": 70,
+      "Speed": 70
+    }
+  },
+  {
+    "id": 149,
+    "name": {
+      "english": "Dragonite",
+      "japanese": "カイリュー",
+      "chinese": "快龙",
+      "french": "Dracolosse"
+    },
+    "type": [
+      "Dragon",
+      "Flying"
+    ],
+    "base": {
+      "HP": 91,
+      "Attack": 134,
+      "Defense": 95,
+      "Sp. Attack": 100,
+      "Sp. Defense": 100,
+      "Speed": 80
+    }
+  },
+  {
+    "id": 150,
+    "name": {
+      "english": "Mewtwo",
+      "japanese": "ミュウツー",
+      "chinese": "超梦",
+      "french": "Mewtwo"
+    },
+    "type": [
+      "Psychic"
+    ],
+    "base": {
+      "HP": 106,
+      "Attack": 110,
+      "Defense": 90,
+      "Sp. Attack": 154,
+      "Sp. Defense": 90,
+      "Speed": 130
+    }
+  },
+  {
+    "id": 151,
+    "name": {
+      "english": "Mew",
+      "japanese": "ミュウ",
+      "chinese": "梦幻",
+      "french": "Mew"
+    },
+    "type": [
+      "Psychic"
+    ],
+    "base": {
+      "HP": 100,
+      "Attack": 100,
+      "Defense": 100,
+      "Sp. Attack": 100,
+      "Sp. Defense": 100,
+      "Speed": 100
+    }
+  }
+]
 
-export const pokemonShinyImages = {
-  1: bulbasaurShiny,
-  2: ivysaurShiny,
-  3: venusaurShiny,
-  4: charmanderShiny,
-  5: charmeleonShiny,
-  6: charizardShiny,
-  7: squirtleShiny,
-  8: wartortleShiny,
-  9: blastoiseShiny,
-  10: caterpieShiny,
-  11: metapodShiny,
-  12: butterfreeShiny,
-  13: weedleShiny,
-  14: kakunaShiny,
-  15: beedrillShiny,
-  16: pidgeyShiny,
-  17: pidgeottoShiny,
-  18: pidgeotShiny,
-  19: rattataShiny,
-  20: raticateShiny,
-  21: spearowShiny,
-  22: fearowShiny,
-  23: ekansShiny,
-  24: arbokShiny,
-  25: pikachuShiny,
-  26: raichuShiny,
-  27: sandshrewShiny,
-  28: sandslashShiny,
-  29: nidoranFShiny,
-  30: nidorinaShiny,
-  31: nidoqueenShiny,
-  32: nidoranMShiny,
-  33: nidorinoShiny,
-  34: nidokingShiny,
-  35: clefairyShiny,
-  36: clefableShiny,
-  37: vulpixShiny,
-  38: ninetalesShiny,
-  39: jigglypuffShiny,
-  40: wigglytuffShiny,
-  41: zubatShiny,
-  42: golbatShiny,
-  43: oddishShiny,
-  44: gloomShiny,
-  45: vileplumShiny,
-  46: parasShiny,
-  47: parasectShiny,
-  48: venonatShiny,
-  49: venomothShiny,
-  50: diglettShiny,
-  51: dugtrioShiny,
-  52: meowthShiny,
-  53: persianShiny,
-  54: psyduckShiny,
-  55: golduckShiny,
-  56: mankeyShiny,
-  57: primeapeShiny,
-  58: growlitheShiny,
-  59: arcanineShiny,
-  60: poliwagShiny,
-  61: poliwhirlShiny,
-  62: poliwrathShiny,
-  63: abraShiny,
-  64: kadabraShiny,
-  65: alakazamShiny,
-  66: machopShiny,
-  67: machokeShiny,
-  68: machampShiny,
-  69: bellsproutShiny,
-  70: weepinbellShiny,
-  71: victreebelShiny,
-  72: tentacoolShiny,
-  73: tentacruelShiny,
-  74: geodudeShiny,
-  75: gravelerShiny,
-  76: golemShiny,
-  77: ponytaShiny,
-  78: rapidashShiny,
-  79: slowpokeShiny,
-  80: slowbroShiny,
-  81: magnemiteShiny,
-  82: magnetonShiny,
-  83: farfetchdShiny,
-  84: doduoShiny,
-  85: dodrioShiny,
-  86: seelShiny,
-  87: dewgongShiny,
-  88: grimerShiny,
-  89: mukShiny,
-  90: shellderShiny,
-  91: cloysterShiny,
-  92: gastlyShiny,
-  93: haunterShiny,
-  94: gengarShiny,
-  95: onixShiny,
-  96: drowzeeShiny,
-  97: hypnoShiny,
-  98: krabbyShiny,
-  99: kinglerShiny,
-  100: voltorbShiny,
-  101: electrodeShiny,
-  102: exeggcuteShiny,
-  103: exeggutorShiny,
-  104: cuboneShiny,
-  105: marowakShiny,
-  106: hitmonleeShiny,
-  107: hitmonchanShiny,
-  108: lickitungShiny,
-  109: koffingShiny,
-  110: weezingShiny,
-  111: rhyhornShiny,
-  112: rhydonShiny,
-  113: chanseyShiny,
-  114: tangelaShiny,
-  115: kangaskhanShiny,
-  116: horseaShiny,
-  117: seadraShiny,
-  118: goldeenShiny,
-  119: seakingShiny,
-  120: staryuShiny,
-  121: starmieShiny,
-  122: mrMimeShiny,
-  123: scytherShiny,
-  124: jynxShiny,
-  125: electabuzzShiny,
-  126: magmarShiny,
-  127: pinsirShiny,
-  128: taurosShiny,
-  129: magikarpShiny,
-  130: gyaradosShiny,
-  131: laprasShiny,
-  132: dittoShiny,
-  133: eeveeShiny,
-  134: vaporeonShiny,
-  135: jolteonShiny,
-  136: flareonShiny,
-  137: porygonShiny,
-  138: omanyteShiny,
-  139: omastarShiny,
-  140: kabutoShiny,
-  141: kabutopsShiny,
-  142: aerodactylShiny,
-  143: snorlaxShiny,
-  144: articunoShiny,
-  145: zapdosShiny,
-  146: moltresShiny,
-  147: dratiniShiny,
-  148: dragonairShiny,
-  149: dragoniteShiny,
-  150: mewtwoShiny,
-  151: mewShiny
-}
+export default pokemonsList.map((pokemon) => ({
+  ...pokemon,
+  image: pokemonImages[pokemon.id],
+  imageShiny: pokemonShinyImages[pokemon.id]
+}));
