@@ -1,42 +1,43 @@
+import { useState, useEffect } from "react";
+import "./index.css";
+const PokemonCard = ({ name, types, image, attack, defense, hp }) => {
+  const [currentHP, setCurrentHP] = useState(hp);
 
-import { useState,useEffect } from "react"
+  useEffect(() => {
+    // alert("le combat commence")
+  }, []);
 
-const PokemonCard = ({name, types, image, attack, defense, hp}) => {
-    const [currentHP, setCurrentHP] = useState(hp)
+  useEffect(() => {
+    console.log("currentHP useEffect", currentHP);
+    if (currentHP <= 0) {
+      alert("bulbizarre est mort");
+    }
+  }, [currentHP]);
 
-    // useEffect(() => {
-    //     alert("rise and shine")
-    
-    // },[])
+  const handleAttack = () => {
+    console.log("bulbizarre ce mange une patate");
+    setCurrentHP(currentHP - 10);
+  };
 
-    // useEffect(() => {
-    //         console.log('currentHP useEffect', currentHP)
-    //     if (currentHP <= 0) {
-    //        alert("bulbizarre est mort")
-    //     }
-    // }, [currentHP])
+  return (
+    <div className="pokemon-card">
+      <div className="pokemon-name-container">
+        <span className="pokemon-name">{name}</span>
+      </div>
+      <img className="pokemon-image" src={image} alt={name} />
+      <div className="pokemon-types-container">
+        {types.map((type) => {
+          return <span key={type}>{type}</span>;
+        })}
+      </div>
+      <div className="pokemon-stats-container">
+        <span>Attack: {attack}</span>
+        <span>Defense: {defense}</span>
+        <span>HP: {currentHP}</span>
+      </div>
+      {/* <button onClick={handleAttack}>Attack</button> */}
+    </div>
+  );
+};
 
-    // const handleAttack = () => {
-    //     console.log("bulbizarre se mange une patate")
-    //     setCurrentHP(currentHP - 10)
-    // }
- 
-    return (
-        <div>
-            <h1>{name}</h1>
-            <img src={image} alt={name} />
-            {types.map((type) => {
-                return (
-                    <p key={type}>{type}</p>
-                )
-            })}
-            <p>Attack: {attack}</p>
-            <p>Defense: {defense}</p>
-            <p>HP: {currentHP}</p>
-            {/* <button onClick={handleAttack}>Attack</button> */}
-
-        </div>
-    )
-}
-
-export default PokemonCard
+export default PokemonCard;
