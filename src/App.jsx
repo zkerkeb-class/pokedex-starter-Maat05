@@ -1,73 +1,48 @@
-import { useState } from "react";
-import pokemons from "./assets/pokemons";
-import PokemonCard from "./components/pokemonCard";
-import "./App.css";
+import { useEffect, useState } from 'react'
+import pokemons from './assets/pokemons'
+import PokemonCard from './components/pokemonCard'
+import SearchBar from './components/searchBar'
+import './App.css'
+
 
 function App() {
-  const [filterNom, setFilterNom] = useState("");
-  const [filterType, setFilterType] = useState("");
-  const [shinyStates, setShinyStates] = useState({});
+  const [search, setSearch] = useState("")
+  const [types, setTypes] = useState([])
 
-  const allTypes = [...new Set(pokemons.flatMap((pokemon) => pokemon.type))].sort();
-
-  const filteredPokemons = pokemons.filter((pokemon) =>
-    pokemon.name.french.toLowerCase().includes(filterNom.toLowerCase())
-  );
-
-  const finalFilteredPokemons = filterType
-    ? filteredPokemons.filter((pokemon) => pokemon.type.includes(filterType))
-    : filteredPokemons;
-
-  const toggleShiny = (pokemonId) => {
-    setShinyStates((prev) => ({
-      ...prev,
-      [pokemonId]: !prev[pokemonId],
-    }));
-  };
+  useEffect(() => {
+    console.log(search)
+    console.log('types', types)
+  }, [search, types])
 
   return (
-    <div className="app">
-      <h1>Liste des Pokémons</h1>
+    <div className="app-container">
+      <SearchBar types={types} setTypes={setTypes} search={search} setSearch={setSearch}/>
 
-      <input
-        type="text"
-        placeholder="Filtrer par nom..."
-        value={filterNom}
-        onChange={(e) => setFilterNom(e.target.value)}
-      />
+    <div className="pokemon-list">
+      {pokemons.map((pokemon) => {
+        const isTypeIncluded = types.length === 0 || types.every(type => pokemon.type.includes(type))
+        const isNameIncluded = search === "" || pokemon.name.french.toLowerCase().includes(search.toLowerCase())
 
-      <select value={filterType} onChange={(e) => setFilterType(e.target.value)}>
-        <option value="">Tous les types</option>
-        {allTypes.map((type, index) => (
-          <option key={index} value={type}>
-            {type}
-          </option>
-        ))}
-      </select>
-
-      <div className="pokemon-list">
-        {finalFilteredPokemons.map((pokemon) => {
-          const isShiny = shinyStates[pokemon.id] || false;
-
-          return (
-            <div key={pokemon.id} className="pokemon-container">
-              <PokemonCard
-                name={pokemon.name.french}
-                types={pokemon.type}
-                image={isShiny ? pokemon.imageShiny : pokemon.image}
-                attack={pokemon.base.Attack}
-                defense={pokemon.base.Defense}
-                hp={pokemon.base.HP}
-              />
-              <button onClick={() => toggleShiny(pokemon.id)}>
-                {isShiny ? "Shiny" : "Normal"}
-              </button>
-            </div>
-          );
-        })}
-      </div>
+        if(!isNameIncluded || !isTypeIncluded){
+          return null
+        }
+        
+        return (
+          <div key={pokemon.id} className="pokemon-card-container">
+          <PokemonCard 
+          name={pokemon.name.french} 
+          types={pokemon.type} 
+          image={pokemon.imageShiny}
+          attack={pokemon.base.Attack}
+          defense={pokemon.base.Defense}
+          hp={pokemon.base.HP}
+        />
+        </div>
+        )
+      })}
     </div>
-  );
+    </div>
+  )
 }
 
 export default App
