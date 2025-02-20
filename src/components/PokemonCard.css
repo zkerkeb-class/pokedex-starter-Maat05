@@ -1,0 +1,25 @@
+.pokemon-card { border-radius: 15px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); width: 340px; text-align: center; padding: 15px; transition: all 0.3s ease-in-out; background: url("../style/Fplante.webp") no-repeat center center; background-size: cover; position: relative; }
+
+.pokemon-list { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; padding: 20px; }
+
+.pokemon-container { display: flex; flex-direction: column; align-items: center; }
+
+.card-header { background: rgba(255, 255, 255, 0.2); padding: 5px; border-radius: 10px; margin-bottom: 20px; position: relative; z-index: 1; border: 2px solid #064420; width: 85%; margin: 0 auto; }
+
+.pokemon-name { font-size: 1.8em; font-weight: bold; color: #000000; text-transform: uppercase; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); }
+
+.card-image-container { background: transparent; padding: 0; display: flex; justify-content: center; align-items: center; height: 175px; }
+
+.pokemon-image { max-width: 65%; height: auto; }
+
+.card-stats { background: rgba(255, 255, 255, 0.2); padding: 10px; border-radius: 10px; margin-top: 30px; position: relative; z-index: 1; border: 2px solid #064420; width: 85%; margin: 0 auto; }
+
+.stats-title { color: #000000; font-weight: bold; font-size: 1.2em; text-align: center; margin-bottom: 10px; }
+
+.stats-grid { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 10px; padding: 10px; }
+
+.stat-block { background: rgba(255, 255, 255, 0.8); font-weight: bold; box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); border: 1px solid black; border-radius: 5px; padding: 5px; text-align: center; font-size: 0.9em; color: black; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 70px; height: 70px; }
+
+.stat-block img { width: 25px; height: 25px; margin-bottom: 5px; }
+
+.type-icon-header { width: 40px; height: 40px; }

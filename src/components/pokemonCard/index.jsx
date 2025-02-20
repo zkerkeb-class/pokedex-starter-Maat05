@@ -5,9 +5,9 @@ const PokemonCard = ({name, types, image, attack, defense, hp}) => {
     const [currentHP, setCurrentHP] = useState(hp)
 
     // useEffect(() => {
-    //     alert("le combat commence")
+    //     alert("rise and shine")
     
-    // }, [])
+    // },[])
 
     // useEffect(() => {
     //         console.log('currentHP useEffect', currentHP)
@@ -16,10 +16,10 @@ const PokemonCard = ({name, types, image, attack, defense, hp}) => {
     //     }
     // }, [currentHP])
 
-    const handleAttack = () => {
-        console.log("bulbizarre se mange une patate")
-        setCurrentHP(currentHP - 10)
-    }
+    // const handleAttack = () => {
+    //     console.log("bulbizarre se mange une patate")
+    //     setCurrentHP(currentHP - 10)
+    // }
  
     return (
         <div>
@@ -33,7 +33,7 @@ const PokemonCard = ({name, types, image, attack, defense, hp}) => {
             <p>Attack: {attack}</p>
             <p>Defense: {defense}</p>
             <p>HP: {currentHP}</p>
-            <button onClick={handleAttack}>Attack</button>
+            {/* <button onClick={handleAttack}>Attack</button> */}
 
         </div>
     )
