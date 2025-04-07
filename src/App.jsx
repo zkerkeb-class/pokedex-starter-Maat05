@@ -3,14 +3,39 @@ import pokemons from './assets/pokemons'
 import PokemonCard from './components/pokemonCard'
 import SearchBar from './components/searchBar'
 import './App.css'
+import axios from 'axios';
+// import PersonList from '../services/api';
+
+// function App() {
+//   return (
+//     <div ClassName="App">
+//       <PersonList/>
+//     </div>
+//   )
+// }
+
 
 function App() { const [search, setSearch] = useState("")
 const [types, setTypes] = useState([])
+const [pokemonList, setPokemonList] = useState([])
+console.log("test");
 const [shinyStates, setShinyStates] = useState({})
-
+useEffect(() => {
+  axios
+    .get("http://localhost:3000/api/pokemons")
+    .then((response) => {
+      console.log(response.data.pokemons)
+      setPokemonList(response.data.pokemons);
+    })
+    .catch((err) => {
+      console.error("Erreur lors de la récupération des Pokémon :", err);
+    });
+  }, []);
 const toggleShiny = (id) => { setShinyStates((prev) => ({ ...prev, [id]: !prev[id] })) }
-
+console.log(pokemonList)
 useEffect(() => { console.log(search)
+  
+console.log(pokemonList)
 console.log('types', types) }, [search, types])
 
 return ( <div className="app-container"> <SearchBar types={types} setTypes={setTypes} search={search} setSearch={setSearch} />
