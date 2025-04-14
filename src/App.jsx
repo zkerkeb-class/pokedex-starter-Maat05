@@ -1,79 +1,134 @@
-import { useEffect, useState } from 'react'
-import pokemons from './assets/pokemons'
-import PokemonCard from './components/pokemonCard'
-import SearchBar from './components/searchBar'
-import './App.css'
-import axios from 'axios';
-// import PersonList from '../services/api';
+// /src/App.jsx
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation, Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import SearchBar from "./components/searchbar"; // your search/type filter component
+import PokemonCard from "./components/pokemonCard"; // your card component (unchanged except for onCardClick support)
+import PokemonDetailWrapper from "./components/pokemonCard/pokemonDetail/PokemonDetailWrapper";
+import "./App.css";
 
-// function App() {
-//   return (
-//     <div ClassName="App">
-//       <PersonList/>
-//     </div>
-//   )
-// }
+// The Pokémon List Page
+const PokemonListPage = ({ language }) => {
+  const [search, setSearch] = useState("");
+  const [types, setTypes] = useState([]);
+  const [pokemons, setPokemons] = useState([]);
+  const location = useLocation();
+  const navigate = useNavigate();
 
+  // If compare mode is active, location.state will contain a property "primaryCompare"
+  const compareMode = location.state?.primaryCompare;
 
-function App() { const [search, setSearch] = useState("")
-const [types, setTypes] = useState([])
-const [pokemonList, setPokemonList] = useState([])
-console.log("test");
-const [shinyStates, setShinyStates] = useState({})
-useEffect(() => {
-  axios
-    .get("http://localhost:3000/api/pokemons")
-    .then((response) => {
-      console.log(response.data.pokemons)
-      setPokemonList(response.data.pokemons);
-    })
-    .catch((err) => {
-      console.error("Erreur lors de la récupération des Pokémon :", err);
-    });
-  }, []);
-const toggleShiny = (id) => { setShinyStates((prev) => ({ ...prev, [id]: !prev[id] })) }
-console.log(pokemonList)
-useEffect(() => { console.log(search)
-  
-console.log(pokemonList)
-console.log('types', types) }, [search, types])
+  useEffect(() => {
+    axios
+      .get("http://192.168.1.132:3000/api/pokemons")
+      .then((response) => setPokemons(response.data))
+      .catch((err) => console.error("Error fetching pokemons:", err));
+  }, []);
 
-return ( <div className="app-container"> <SearchBar types={types} setTypes={setTypes} search={search} setSearch={setSearch} />
-
-  <div className="pokemon-list">
-    {pokemons.map((pokemon) => {
-      const isTypeIncluded =
-        types.length === 0 || types.every((type) => pokemon.type.includes(type))
-      const isNameIncluded =
-        search === "" || pokemon.name.french.toLowerCase().includes(search.toLowerCase())
-
-      if (!isNameIncluded || !isTypeIncluded) {
-        return null
-      }
-
-      const isShiny = shinyStates[pokemon.id] || false
-      const currentImage = isShiny ? pokemon.imageShiny : pokemon.image
-
-      return (
-        <div
-          key={pokemon.id}
-          className="pokemon-card-container"
-          onClick={() => toggleShiny(pokemon.id)}
+  return (
+    <div className="app-container">
+      <div className="language-selector">
+        <label htmlFor="language">Select Language: </label>
+        <select
+          name="language"
+          value={language}
+          onChange={(e) => {
+            // For simplicity, you could manage language globally.
+            // Here we simply refresh the component.
+            navigate(location.pathname, { replace: true, state: { ...location.state, language: e.target.value } });
+          }}
         >
-          <PokemonCard
-            name={pokemon.name.french}
-            types={pokemon.type}
-            image={currentImage}
-            attack={pokemon.base.Attack}
-            defense={pokemon.base.Defense}
-            hp={pokemon.base.HP}
-          />
-        </div>
-      )
+          <option value="english">English</option>
+          <option value="french">Français</option>
+          <option value="japanese">日本語</option>
+          <option value="chinese">中文</option>
+        </select>
+      </div>
+
+      <SearchBar search={search} setSearch={setSearch} types={types} setTypes={setTypes} />
+
+      <div className="pokemon-list">
+  {pokemons
+    .filter((pokemon) => {
+      const searchLower = search.toLowerCase();
+      const nameMatch =
+        search === "" ||
+        (pokemon.name.english &&
+          pokemon.name.english.toLowerCase().includes(searchLower)) ||
+        (pokemon.name.french &&
+          pokemon.name.french.toLowerCase().includes(searchLower));
+      const typeMatch =
+        types.length === 0 ||
+        types.every((selectedType) => pokemon.type.includes(selectedType));
+      return nameMatch && typeMatch;
+    })
+    .map((pokemon) => {
+      const locationState = location.state || {};
+      const compareMode = !!locationState.primaryCompare; // if present, compare mode is active
+
+      if (compareMode) {
+        // In compare mode, hovering over a card should update the compareId dynamically.
+        return (
+          <div
+            key={pokemon.id}
+            onClick={() =>
+              navigate(`/pokemon/${locationState.primaryCompare}`, {
+                state: {
+                  primaryCompare: locationState.primaryCompare,
+                  compareId: pokemon.id,
+                  language,
+                },
+              })
+            }
+            style={{ cursor: "pointer" }}
+          >
+            <PokemonCard
+              pokemon={pokemon}
+              language={language}
+            />
+          </div>
+        );
+      } else {
+        // Normal mode: clicking navigates directly to the card’s own detail page.
+        return (
+          <Link
+            to={{
+              pathname: `/pokemon/${pokemon.id}`,
+              state: { language },
+            }}
+            key={pokemon.id}
+            style={{ textDecoration: "none" }}
+          >
+            <PokemonCard
+              pokemon={pokemon}
+              language={language}
+            />
+          </Link>
+        );
+      }
     })}
-  </div>
 </div>
+    </div>
+  );
+};
 
-) }
+const AppRoutes = () => {
+  // Manage language state here (could also use context)
+  const [language, setLanguage] = useState("english");
+  return (
+    <Routes>
+      <Route path="/" element={<PokemonListPage language={language} setLanguage={setLanguage} />} />
+      <Route path="/pokemon/:id" element={<PokemonDetailWrapper language={language} />} />
+    </Routes>
+  );
+};
 
-export default App
+function App() {
+  return (
+    <Router>
+      <AppRoutes />
+    </Router>
+  );
+}
+
+export default App;
