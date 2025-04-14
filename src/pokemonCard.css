@@ -1,0 +1,85 @@
+/* Style de base de la carte Pokémon */
+.pokemon-card {
+    /* Donne un ratio fixe (ici 4:5) pour conserver une forme constante */
+    aspect-ratio: 4 / 5;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 1.5rem;
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    background-color: #222; /* Couleur par défaut de repli */
+  }
+  
+  .pokemon-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Image et titre */
+  .pokemon-image {
+    width: 100%;
+    height: auto;
+    max-width: 150px;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  .pokemon-name {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+  }
+  
+  /* Statistiques */
+  .pokemon-stats {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .pokemon-stats li {
+    padding: 0.3rem 0;
+    border-bottom: 1px dashed #444;
+  }
+  
+  /* Affichage des types dans la carte */
+  .pokemon-types {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .pokemon-type {
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Couleurs de fond selon le type principal */
+  /* Attention, le nom du type doit correspondre à celui formaté dans le composant */
+  
+  .type-Bug      { background-color: #A8B820; }
+  .type-Dark     { background-color: #0e0b0a; }
+  .type-Dragon   { background-color: #7038F8; }
+  .type-Electric { background-color: #ffd220; color: #000; }
+  .type-Fairy    { background-color: #faa8ba; color: #000; }
+  .type-Fighting { background-color: #c058288c; }
+  .type-Fire     { background-color: #ad4503; }
+  .type-Flying   { background-color: #90c2f0; color: #000; }
+  .type-Ghost    { background-color: #705898; }
+  .type-Grass    { background-color: #4c9e23; color: #000; }
+  .type-Ground   { background-color: #af9242; color: #000; }
+  .type-Ice      { background-color: #98D8D8; color: #000; }
+  .type-Normal   { background-color: #A8A878; color: #000; }
+  .type-Poison   { background-color: #A040A0; }
+  .type-Psychic  { background-color: #F85888; }
+  .type-Rock     { background-color: #9b8522; color: #000; }
+  .type-Steel    { background-color: #B8B8D0; color: #000; }
+  .type-Water    { background-color: #6890F0; }
+  
