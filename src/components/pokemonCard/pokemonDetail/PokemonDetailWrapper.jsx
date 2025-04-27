@@ -1,45 +1,44 @@
-import React, { useEffect, useState } from "react";
-import { useParams, useLocation } from "react-router-dom";
-import axios from "axios";
-import PokemonDetail from "./PokemonDetail";
+// src/components/pokemonCard/pokemonDetail/PokemonDetailWrapper.jsx
+import React, { useEffect, useState } from 'react';
+import { useParams, useLocation } from 'react-router-dom';
+import api from '../../../services/api';
+import PokemonDetail from './PokemonDetail';
 
-function PokemonDetailWrapper({ language }) {
-  const { id } = useParams(); // primary Pokémon id from the URL
+export default function PokemonDetailWrapper({ language }) {
+  const { id } = useParams();
   const location = useLocation();
-  const compareIdFromState = location.state?.compareId || null;
-  
+  const compareId = location.state?.compareId || null;
+
   const [primaryPokemon, setPrimaryPokemon] = useState(null);
   const [comparePokemon, setComparePokemon] = useState(null);
 
   useEffect(() => {
-    axios
-      .get(`http://192.168.1.132:3000/api/pokemons/${id}`)
+    api
+      .get(`/pokemons/${id}`)
       .then((res) => setPrimaryPokemon(res.data))
-      .catch((err) => console.error("Error fetching primary Pokémon:", err));
+      .catch((err) => console.error('Error fetching primary Pokémon:', err));
   }, [id]);
 
   useEffect(() => {
-    if (compareIdFromState) {
-      axios
-        .get(`http://192.168.1.132:3000/api/pokemons/${compareIdFromState}`)
+    if (compareId) {
+      api
+        .get(`/pokemons/${compareId}`)
         .then((res) => setComparePokemon(res.data))
-        .catch((err) =>
-          console.error("Error fetching compare Pokémon:", err)
-        );
+        .catch((err) => console.error('Error fetching compare Pokémon:', err));
     } else {
       setComparePokemon(null);
     }
-  }, [compareIdFromState]);
+  }, [compareId]);
 
-  // Adding a key forces remounting if compareId changes.
+  if (!primaryPokemon) {
+    return <div>Loading details...</div>;
+  }
+
   return (
     <PokemonDetail
-      key={`${id}-${compareIdFromState || "none"}`}
       pokemon={primaryPokemon}
       comparePokemon={comparePokemon}
       language={language}
     />
   );
 }
-
-export default PokemonDetailWrapper;

@@ -1,3 +1,70 @@
+/* src/index.css */
+/* ------------------------- */
+/*       RESET & GLOBAUX     */
+/* ------------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #000; /* Fond noir */
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* ------------------------- */
+/*     CONTENEUR GLOBAL      */
+/* ------------------------- */
+.app-container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ------------------------- */
+/*         LOGO              */
+/* ------------------------- */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  transition: filter 300ms;
+  display: block;
+  margin: 0 auto; /* Centre le logo */
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+/* ------------------------- */
+/*    LISTE DE POKÉMON       */
+/* ------------------------- */
+.pokemon-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start; /* Pour éviter l'étirement vertical */
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* ------------------------- */
+/* CONTENEUR INDIVIDUEL D'UNE CARTE */
+/* ------------------------- */
+.pokemon-card-container {
+  margin: 10px;
+  flex: 0 0 240px;
+  display: flex;
+  justify-content: center;
+}
+
+/* …et tout le reste de tes règles globales… */
+
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -65,4 +132,49 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+/* src/components/pokemonCard/index.css */
+/* Styles de base pour la carte Pokémon */
+.pokemon-card {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  transition: background-color 0.3s ease;
+  color: #fff;            /* Texte blanc */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pokemon-card .pokemon-name {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #fff;            /* Force couleur blanche */
+}
+
+/* Couleurs de fond par type principal */
+.pokemon-card.type-Fire     { background-color: #F08030; }
+.pokemon-card.type-Water    { background-color: #6890F0; }
+.pokemon-card.type-Grass    { background-color: #78C850; }
+.pokemon-card.type-Electric { background-color: #F8D030; }
+.pokemon-card.type-Ice      { background-color: #98D8D8; }
+.pokemon-card.type-Fighting { background-color: #C03028; }
+.pokemon-card.type-Poison   { background-color: #A040A0; }
+.pokemon-card.type-Ground   { background-color: #E0C068; }
+.pokemon-card.type-Flying   { background-color: #A890F0; }
+.pokemon-card.type-Psychic  { background-color: #F85888; }
+.pokemon-card.type-Bug      { background-color: #A8B820; }
+.pokemon-card.type-Rock     { background-color: #B8A038; }
+.pokemon-card.type-Ghost    { background-color: #705898; }
+.pokemon-card.type-Dragon   { background-color: #7038F8; }
+.pokemon-card.type-Dark     { background-color: #705848; }
+.pokemon-card.type-Steel    { background-color: #B8B8D0; }
+.pokemon-card.type-Fairy    { background-color: #EE99AC; }
+.pokemon-card.type-Normal   { background-color: #A8A878; }
+
+/* Statistiques et types */
+.pokemon-card .pokemon-types-container span,
+.pokemon-card .pokemon-stats-container span {
+  color: #fff;
 }
