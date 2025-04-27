@@ -1,0 +1,80 @@
+/* src/components/Game.css */
+.game-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    /* nice two‐tone gradient */
+    background: linear-gradient(
+      to bottom right,
+      #89d4cf 0%,
+      #6e45e2 100%
+    );
+    z-index: 0;
+  }
+  
+  .game-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 0;
+  }
+  
+  .game-info {
+    position: absolute;
+    top: 1rem;
+    right: 1rem; /* moved to top-right corner */
+    color: #fff;
+    font-size: 3rem; /* increased font size */
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* black outline */
+    z-index: 1;
+  }
+  
+  .xp-bar-container {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 5%;
+    width: 90%;
+    height: 1rem;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .xp-bar {
+    height: 100%;
+    background: #4fc3f7;
+    transition: width 0.3s ease;
+  }
+  
+  .enemy {
+    position: absolute;
+    cursor: crosshair;
+    z-index: 1;
+    transition: transform 0.2s;
+  }
+  
+  .enemy:hover {
+    transform: scale(1.2);
+  }
+  
+  .shot {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    animation: fly 0.5s forwards;
+    z-index: 1;
+  }
+  
+  @keyframes fly {
+    to {
+      opacity: 0;
+    }
+  }
+  

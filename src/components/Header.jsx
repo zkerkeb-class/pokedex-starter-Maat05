@@ -6,8 +6,6 @@ import './Header.css';
 
 export default function Header() {
   const { user, isAuthenticated, logout } = useAuth();
-
-  // Déterminer l'affichage du rôle : 'admin' pour admin, 'user' sinon
   const role = user?.username === 'admin' ? 'admin' : 'user';
 
   return (
@@ -21,7 +19,7 @@ export default function Header() {
           </>
         ) : (
           <>
-            <span></span>
+            {/* <span>Bonjour, {role}</span> */}
             <button onClick={logout}>Logout</button>
           </>
         )}

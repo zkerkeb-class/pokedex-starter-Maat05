@@ -17,6 +17,7 @@ import api from './services/api';
 
 /* --- Pages & composants --- */
 import Header from './components/Header';
+import Game from './components/Game';
 import ProtectedRoute from './components/ProtectedRoute';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -136,7 +137,7 @@ function AppRoutes() {
       {/* publique */}
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-
+      <Route path="/game"     element={<Game />} />
       {/* protégée */}
       <Route element={<ProtectedRoute />}>
         <Route index element={<PokemonListPage language={language} />} />

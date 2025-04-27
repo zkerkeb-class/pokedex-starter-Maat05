@@ -1,58 +1,55 @@
 // src/pages/Register.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../hooks/useAuth';
+import api from '../services/api';
 import './Register.css';
 
 export default function Register() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [role, setRole] = useState('user');
-  const [error, setError] = useState('');
-  const { register } = useAuth();
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError(null);
     try {
-      await register(username, password, role);
+      // default role is 'trainer'
+      await api.post('/auth/register', { username, password, role: 'trainer' });
       navigate('/login');
     } catch (err) {
-      setError(err.response?.data?.message || 'Erreur inscription');
+      console.error('Registration error:', err);
+      setError(err.response?.data?.message || 'Registration failed');
     }
   };
 
   return (
     <div className="register-container">
-      <h2>S'inscrire</h2>
-      {error && <p className="error">{error}</p>}
+      <h2>Create an Account</h2>
       <form onSubmit={handleSubmit} className="register-form">
-        <label>
-          Nom d’utilisateur
-          <input
-            type="text"
-            value={username}
-            onChange={e => setUsername(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          Mot de passe
-          <input
-            type="password"
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          Rôle
-          <select value={role} onChange={e => setRole(e.target.value)}>
-            <option value="user">Utilisateur</option>
-            <option value="admin">Administrateur</option>
-          </select>
-        </label>
-        <button type="submit">Créer un compte</button>
+        <label htmlFor="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          required
+        />
+
+        <label htmlFor="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+
+        {/* Hidden default role */}
+        <input type="hidden" name="role" value="trainer" />
+
+        <button type="submit">Register</button>
+        {error && <p className="error">{error}</p>}
       </form>
     </div>
   );

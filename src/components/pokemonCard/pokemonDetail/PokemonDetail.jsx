@@ -127,6 +127,21 @@ function PokemonDetail({ pokemon, comparePokemon, language = "english" }) {
           </button>
         )}
       </div>
+      {/* ▶️ BOUTON “Play as this” */}
+     <div style={{ textAlign: "center", width: "100%" }}>
+      <button
+         onClick={() =>
+          navigate("/game", { state: { player: pokemon } })
+        }
+         style={{
+           padding: "0.5rem 1rem",
+           fontSize: "1rem",
+           marginTop: "1rem",
+        }}
+       >
+         ▶️ Play as {typeof pokemon.name === "object" ? pokemon.name[language] || pokemon.name.english : pokemon.name}
+      </button>
+    </div>
     </div>
   );
 }
