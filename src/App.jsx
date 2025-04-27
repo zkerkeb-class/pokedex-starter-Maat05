@@ -30,19 +30,21 @@ import './App.css';
 /* --------------------------------------------------------------
  *  Page liste Pokémons
  * ------------------------------------------------------------*/
-const PokemonListPage = ({ language }) => {
+const PokemonListPage = ({ language: defaultLanguage }) => {
   const [search, setSearch] = useState('');
   const [types, setTypes] = useState([]);
   const [pokemons, setPokemons] = useState([]);
   const location = useLocation();
   const navigate = useNavigate();
 
+  // Determine current language from location state or fallback
+  const language = location.state?.language || defaultLanguage;
   const compareMode = location.state?.primaryCompare;
 
   useEffect(() => {
     api
       .get('/pokemons')
-      .then((r) => setPokemons(r.data))
+      .then((res) => setPokemons(res.data))
       .catch((err) => console.error('Error fetching pokemons:', err));
   }, []);
 
@@ -52,7 +54,7 @@ const PokemonListPage = ({ language }) => {
       <div className="language-selector">
         <label htmlFor="language">Select Language:&nbsp;</label>
         <select
-          name="language"
+          id="language"
           value={language}
           onChange={(e) =>
             navigate(location.pathname, {
@@ -79,18 +81,23 @@ const PokemonListPage = ({ language }) => {
       <div className="pokemon-list">
         {pokemons
           .filter((pokemon) => {
-            const s = search.toLowerCase();
-            const nameMatch =
-              s === '' ||
-              (pokemon.name.english &&
-                pokemon.name.english.toLowerCase().includes(s)) ||
-              (pokemon.name.french &&
-                pokemon.name.french.toLowerCase().includes(s));
-            const typeMatch =
+            const q = search.toLowerCase();
+            const nameObj = pokemon.name;
+            const nameValue =
+              typeof nameObj === 'object'
+                ? nameObj[language] || nameObj.english
+                : nameObj;
+            const matchName = q === '' || nameValue.toLowerCase().includes(q);
+            const matchType =
               types.length === 0 || types.every((t) => pokemon.type.includes(t));
-            return nameMatch && typeMatch;
+            return matchName && matchType;
           })
           .map((pokemon) => {
+            const displayName =
+              typeof pokemon.name === 'object'
+                ? pokemon.name[language] || pokemon.name.english
+                : pokemon.name;
+
             if (compareMode) {
               return (
                 <div
@@ -110,11 +117,12 @@ const PokemonListPage = ({ language }) => {
                 </div>
               );
             }
+
             return (
               <Link
+                key={pokemon.id}
                 to={`/pokemon/${pokemon.id}`}
                 state={{ language }}
-                key={pokemon.id}
                 style={{ textDecoration: 'none' }}
               >
                 <PokemonCard pokemon={pokemon} language={language} />
@@ -137,7 +145,8 @@ function AppRoutes() {
       {/* publique */}
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/game"     element={<Game />} />
+      <Route path="/game" element={<Game />} />
+
       {/* protégée */}
       <Route element={<ProtectedRoute />}>
         <Route index element={<PokemonListPage language={language} />} />
