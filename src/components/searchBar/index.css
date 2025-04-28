@@ -1,0 +1,12 @@
+.search-bar{
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #d4d0d7;
+    border-radius: 8px;
+    font-size: 24px;
+    outline: none;
+}
+
+.active{
+    background-color: #d4d0d7;
+}

@@ -1,0 +1,30 @@
+/* Base styling for the Pokémon card */
+.pokemon-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  padding: 1.5rem;
+  text-align: center;
+  width: 100%;
+  color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.type-Bug      { background-color: #A8B820; }
+.type-Dark     { background-color: #705848; }
+.type-Dragon   { background-color: #7038F8; }
+.type-Electric { background-color: #F8D030; color: #000; }
+.type-Fairy    { background-color: #EE99AC; color: #000; }
+.type-Fighting { background-color: #C03028; }
+.type-Fire     { background-color: #F08030; }
+.type-Flying   { background-color: #A890F0; color: #000; }
+.type-Ghost    { background-color: #705898; }
+.type-Grass    { background-color: #78C850; color: #000; }
+.type-Ground   { background-color: #E0C068; color: #000; }
+.type-Ice      { background-color: #98D8D8; color: #000; }
+.type-Normal   { background-color: #A8A878; color: #000; }
+.type-Poison   { background-color: #A040A0; }
+.type-Psychic  { background-color: #F85888; }
+.type-Rock     { background-color: #B8A038; color: #000; }
+.type-Steel    { background-color: #B8B8D0; color: #000; }
+.type-Water    { background-color: #6890F0; }

@@ -1,0 +1,81 @@
+/* src/components/pokemonCard/pokemonDetail/PokemonDetail.css */
+.pokemon-detail-container {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  color: #fff;
+}
+
+.pokemon-detail-card {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.pokemon-detail-stats {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.pokemon-detail-stats h2 {
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.chart-container {
+  width: 100%;
+  max-width: 500px;
+  height: 400px;
+}
+
+.pokemon-extra-details {
+  text-align: left;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.pokemon-extra-details p {
+  margin: 0.25rem 0;
+}
+
+.pokemon-compare-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.compare-button {
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.compare-card {
+  text-align: center;
+}
+
+.compare-card h3 {
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.detail-card-title {
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.detail-card-stats p {
+  margin: 0.25rem 0;
+}

@@ -1,4 +1,4 @@
-import {pokemonImages} from './imageLibrary';
+import {pokemonImages, pokemonShinyImages} from './imageLibrary';
 
 
 const pokemonsList = [{
@@ -3092,5 +3092,6 @@ const pokemonsList = [{
 
 export default pokemonsList.map((pokemon) => ({
   ...pokemon,
-  image: pokemonImages[pokemon.id]
+  image: pokemonImages[pokemon.id],
+  imageShiny: pokemonShinyImages[pokemon.id]
 }));

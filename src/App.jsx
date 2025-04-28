@@ -1,35 +1,175 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// src/App.jsx
+// --------------------------------------------------------------
+// Structure principale de l'application React
+// --------------------------------------------------------------
 
-function App() {
-  const [count, setCount] = useState(0)
+import React, { useState, useEffect } from 'react';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+  Link,
+  useLocation,
+  useNavigate,
+} from 'react-router-dom';
+import api from './services/api';
+
+/* --- Pages & composants --- */
+import Header from './components/Header';
+import Game from './components/Game';
+import ProtectedRoute from './components/ProtectedRoute';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import SearchBar from './components/searchbar';
+import PokemonCard from './components/pokemonCard';
+import PokemonDetailWrapper from './components/pokemonCard/pokemonDetail/PokemonDetailWrapper';
+
+import './App.css';
+
+/* --------------------------------------------------------------
+ *  Page liste Pokémons
+ * ------------------------------------------------------------*/
+const PokemonListPage = ({ language: defaultLanguage }) => {
+  const [search, setSearch] = useState('');
+  const [types, setTypes] = useState([]);
+  const [pokemons, setPokemons] = useState([]);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Determine current language from location state or fallback
+  const language = location.state?.language || defaultLanguage;
+  const compareMode = location.state?.primaryCompare;
+
+  useEffect(() => {
+    api
+      .get('/pokemons')
+      .then((res) => setPokemons(res.data))
+      .catch((err) => console.error('Error fetching pokemons:', err));
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="app-container">
+      {/* -------- Sélecteur de langue -------- */}
+      <div className="language-selector">
+        <label htmlFor="language">Select Language:&nbsp;</label>
+        <select
+          id="language"
+          value={language}
+          onChange={(e) =>
+            navigate(location.pathname, {
+              replace: true,
+              state: { ...location.state, language: e.target.value },
+            })
+          }
+        >
+          <option value="english">English</option>
+          <option value="french">Français</option>
+          <option value="japanese">日本語</option>
+          <option value="chinese">中文</option>
+        </select>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+
+      <SearchBar
+        search={search}
+        setSearch={setSearch}
+        types={types}
+        setTypes={setTypes}
+      />
+
+      {/* -------- Liste des cartes -------- */}
+      <div className="pokemon-list">
+        {pokemons
+          .filter((pokemon) => {
+            const q = search.toLowerCase();
+            const nameObj = pokemon.name;
+            const nameValue =
+              typeof nameObj === 'object'
+                ? nameObj[language] || nameObj.english
+                : nameObj;
+            const matchName = q === '' || nameValue.toLowerCase().includes(q);
+            const matchType =
+              types.length === 0 || types.every((t) => pokemon.type.includes(t));
+            return matchName && matchType;
+          })
+          .map((pokemon) => {
+            const displayName =
+              typeof pokemon.name === 'object'
+                ? pokemon.name[language] || pokemon.name.english
+                : pokemon.name;
+
+            if (compareMode) {
+              return (
+                <div
+                  key={pokemon.id}
+                  onClick={() =>
+                    navigate(`/pokemon/${location.state.primaryCompare}`, {
+                      state: {
+                        primaryCompare: location.state.primaryCompare,
+                        compareId: pokemon.id,
+                        language,
+                      },
+                    })
+                  }
+                  style={{ cursor: 'pointer' }}
+                >
+                  <PokemonCard pokemon={pokemon} language={language} />
+                </div>
+              );
+            }
+
+            return (
+              <Link
+                key={pokemon.id}
+                to={`/pokemon/${pokemon.id}`}
+                state={{ language }}
+                style={{ textDecoration: 'none' }}
+              >
+                <PokemonCard pokemon={pokemon} language={language} />
+              </Link>
+            );
+          })}
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
+};
+
+/* --------------------------------------------------------------
+ *  Définition des routes
+ * ------------------------------------------------------------*/
+function AppRoutes() {
+  const [language] = useState('english');
+
+  return (
+    <Routes>
+      {/* publique */}
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/game" element={<Game />} />
+
+      {/* protégée */}
+      <Route element={<ProtectedRoute />}>
+        <Route index element={<PokemonListPage language={language} />} />
+        <Route
+          path="pokemon/:id"
+          element={<PokemonDetailWrapper language={language} />}
+        />
+      </Route>
+
+      {/* fallback */}
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
+  );
 }
 
-export default App
+/* --------------------------------------------------------------
+ *  Composant racine exporté
+ * ------------------------------------------------------------*/
+export default function App() {
+  return (
+    <Router>
+      <Header />
+      <AppRoutes />
+    </Router>
+  );
+}
